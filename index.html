@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>V.Nikhil - Personal Portfolio</title>
+  <title>V.Nikhil - Portfolio</title>
 
   <!--- favicon-->
   <link rel="shortcut icon" href="./assets/images/logo.ico" type="image/x-icon">
@@ -17,13 +17,16 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <!--- aos css link-->
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 </head>
 
 <body>
   <!--- #MAIN-->
   <main>
     <!--- #SIDEBAR-->
-    <aside class="sidebar" data-sidebar>
+    <aside class="sidebar" data-sidebar data-aos="fade-right">
       <div class="sidebar-info">
         <figure class="avatar-box">
           <img src="./assets/images/my-avatar.png" alt="Vanama Nikhil" width="80">
@@ -139,24 +142,18 @@
 
       <!--- #ABOUT-->
 
-      <article class="about  active" data-page="about">
+      <article class="about  active" data-page="about" data-aos="fade-up">
         <header>
           <h2 class="h2 article-title">About me</h2>
         </header>
 
         <section class="about-text">
           <p>
-            I'm Creative Director and UI/UX Designer from Sydney, Australia, working in web development and print media.
-            I enjoy
-            turning complex problems into simple, beautiful and intuitive designs.
+            I’m Nikhil Vanama, a Software Engineer focused on building modern web applications and intuitive digital experiences. I enjoy turning complex ideas into simple, scalable, and user-friendly solutions. My work includes web design, frontend engineering, and WordPress development, creating responsive and visually engaging products across industries like healthcare, government services, logistics, and business platforms.
           </p>
 
           <p>
-            My job is to build your website so that it is functional and user-friendly but at the same time attractive.
-            Moreover, I
-            add personal touch to your product and make sure that is eye-catching and easy to use. My aim is to bring
-            across your
-            message and identity in the most creative way. I created web design for many famous brand companies.
+            Beyond web development, I’m highly interested in enterprise systems and the future of digital platforms. I’m currently exploring the SAP ecosystem, learning Fiori, ABAP, HANA, BTP, and CAP, with the goal of building intelligent ERP system frontends that combine usability, performance, and strong enterprise-level architecture.
           </p>
         </section>
 
@@ -167,55 +164,54 @@
           <h3 class="h3 service-title">What i'm doing</h3>
 
           <ul class="service-list">
-            <li class="service-item">
+            <li class="service-item" data-aos="zoom-in">
+              <div class="service-icon-box">
+                <img src="./assets/images/icon-SAP.svg" alt="SAP icon" width="40">
+              </div>
+
+              <div class="service-content-box">
+                <h4 class="h4 service-item-title">Enterprise & SAP Learning</h4>
+                <p class="service-item-text">
+                  Exploring SAP ecosystem including Fiori, ABAP, HANA, BTP, CAP, building modern ERP interfaces and enterprise solutions.
+                </p>
+              </div>
+            </li>
+
+            <li class="service-item" data-aos="zoom-in">
               <div class="service-icon-box">
                 <img src="./assets/images/icon-design.svg" alt="design icon" width="40">
               </div>
 
               <div class="service-content-box">
-                <h4 class="h4 service-item-title">Web design</h4>
+                <h4 class="h4 service-item-title">UI / Web Design</h4>
                 <p class="service-item-text">
-                  The most modern and high-quality design made at a professional level.
+                  Designing clean, modern interfaces focused on usability, accessibility, and engaging user experiences across digital platforms.
                 </p>
               </div>
             </li>
 
-            <li class="service-item">
+            <li class="service-item" data-aos="zoom-in">
               <div class="service-icon-box">
                 <img src="./assets/images/icon-dev.svg" alt="Web development icon" width="40">
               </div>
 
               <div class="service-content-box">
-                <h4 class="h4 service-item-title">Web development</h4>
+                <h4 class="h4 service-item-title">Web Development</h4>
                 <p class="service-item-text">
-                  High-quality development of sites at the professional level.
+                  Building responsive, scalable websites/Applications using modern JavaScript frameworks, ensuring performance, maintainability, user interaction.
                 </p>
               </div>
             </li>
 
-            <li class="service-item">
+            <li class="service-item" data-aos="zoom-in">
               <div class="service-icon-box">
-                <img src="./assets/images/icon-app.svg" alt="mobile app icon" width="40">
+                <img src="./assets/images/icon-wordpress.svg" alt="Wordpress icon" width="40">
               </div>
 
               <div class="service-content-box">
-                <h4 class="h4 service-item-title">Mobile apps</h4>
+                <h4 class="h4 service-item-title">Wordpress Solutions</h4>
                 <p class="service-item-text">
-                  Professional development of applications for iOS and Android.
-                </p>
-              </div>
-
-            </li>
-
-            <li class="service-item">
-              <div class="service-icon-box">
-                <img src="./assets/images/icon-photo.svg" alt="camera icon" width="40">
-              </div>
-
-              <div class="service-content-box">
-                <h4 class="h4 service-item-title">Photography</h4>
-                <p class="service-item-text">
-                  I make high-quality photos of any category at a professional level.
+                  Building custom WordPress websites with modern design, performance optimization, and seamless integration with other platforms.
                 </p>
               </div>
             </li>
@@ -225,10 +221,10 @@
 
         <!-- Testimonials -->
 
-        <section class="testimonials">
+        <!-- <section class="testimonials">
           <h3 class="h3 testimonials-title">Testimonials</h3>
           <ul class="testimonials-list has-scrollbar">
-            <li class="testimonials-item">
+            <li class="testimonials-item" data-aos="fade-up">
               <div class="content-card" data-testimonials-item>
                 <figure class="testimonials-avatar-box">
                   <img src="./assets/images/avatar-1.png" alt="Daniel lewis" width="60" data-testimonials-avatar>
@@ -247,7 +243,7 @@
               </div>
             </li>
 
-            <li class="testimonials-item">
+            <li class="testimonials-item" data-aos="fade-up">
               <div class="content-card" data-testimonials-item>
                 <figure class="testimonials-avatar-box">
                   <img src="./assets/images/avatar-2.png" alt="Jessica miller" width="60" data-testimonials-avatar>
@@ -266,7 +262,7 @@
               </div>
             </li>
 
-            <li class="testimonials-item">
+            <li class="testimonials-item" data-aos="fade-up">
               <div class="content-card" data-testimonials-item>
                 <figure class="testimonials-avatar-box">
                   <img src="./assets/images/avatar-3.png" alt="Emily evans" width="60" data-testimonials-avatar>
@@ -285,7 +281,7 @@
               </div>
             </li>
 
-            <li class="testimonials-item">
+            <li class="testimonials-item" data-aos="fade-up">
               <div class="content-card" data-testimonials-item>
                 <figure class="testimonials-avatar-box">
                   <img src="./assets/images/avatar-4.png" alt="Henry william" width="60" data-testimonials-avatar>
@@ -304,12 +300,11 @@
               </div>
             </li>
           </ul>
-        </section>
-
+        </section> -->
 
         <!-- Testimonials modal -->
 
-        <div class="modal-container" data-modal-container>
+        <!-- <div class="modal-container" data-modal-container>
           <div class="overlay" data-overlay></div>
 
           <section class="testimonials-modal">
@@ -337,12 +332,11 @@
               </div>
             </div>
           </section>
-        </div>
-
+        </div> -->
 
         <!-- Clients -->
 
-        <section class="clients">
+        <!-- <section class="clients">
           <h3 class="h3 clients-title">Clients</h3>
 
           <ul class="clients-list has-scrollbar">
@@ -382,12 +376,12 @@
               </a>
             </li>
           </ul>
-        </section>
+        </section> -->
       </article>
 
       <!--- #RESUME-->
 
-      <article class="resume" data-page="resume">
+      <article class="resume" data-page="resume" data-aos="fade-up">
         <header>
           <h2 class="h2 article-title">Resume</h2>
         </header>
@@ -401,7 +395,7 @@
           </div>
 
           <ol class="timeline-list">
-            <li class="timeline-item">
+            <li class="timeline-item" data-aos="fade-left">
               <h4 class="h4 timeline-item-title">University Of Engineering Pune </h4>
               <span>2021 — 2024</span>
               <p class="timeline-text">
@@ -411,7 +405,7 @@
               </p>
             </li>
 
-            <li class="timeline-item">
+            <li class="timeline-item" data-aos="fade-left">
               <h4 class="h4 timeline-item-title">New york academy of Texas</h4>
               <span>2018 — 2024</span>
               <p class="timeline-text">
@@ -441,7 +435,7 @@
           </div>
 
           <ol class="timeline-list">
-            <li class="timeline-item">
+            <li class="timeline-item" data-aos="fade-right">
               <h4 class="h4 timeline-item-title">Creative director</h4>
               <span>2015 — Present</span>
               <p class="timeline-text">
@@ -451,7 +445,7 @@
               </p>
             </li>
 
-            <li class="timeline-item">
+            <li class="timeline-item" data-aos="fade-right">
               <h4 class="h4 timeline-item-title">Art director</h4>
               <span>2013 — 2015</span>
               <p class="timeline-text">
@@ -478,7 +472,7 @@
           <h3 class="h3 skills-title">My skills</h3>
 
           <ul class="skills-list content-card">
-            <li class="skills-item">
+            <li class="skills-item" data-aos="fade-up">
               <div class="title-wrapper">
                 <h5 class="h5">Web design</h5>
                 <data value="80">80%</data>
@@ -488,7 +482,7 @@
               </div>
             </li>
 
-            <li class="skills-item">
+            <li class="skills-item" data-aos="fade-up">
               <div class="title-wrapper">
                 <h5 class="h5">Graphic design</h5>
                 <data value="70">70%</data>
@@ -498,7 +492,7 @@
               </div>
             </li>
 
-            <li class="skills-item">
+            <li class="skills-item" data-aos="fade-up">
               <div class="title-wrapper">
                 <h5 class="h5">Branding</h5>
                 <data value="90">90%</data>
@@ -523,7 +517,7 @@
 
       <!-- #PORTFOLIO-->
 
-      <article class="portfolio" data-page="portfolio">
+      <article class="portfolio" data-page="portfolio" data-aos="fade-up">
         <header>
           <h2 class="h2 article-title">Portfolio</h2>
         </header>
@@ -576,7 +570,7 @@
           </div>
 
           <ul class="project-list">
-            <li class="project-item  active" data-filter-item data-category="web development">
+            <li class="project-item  active" data-filter-item data-category="web development" data-aos="fade-up">
               <a href="#">
                 <figure class="project-img">
                   <div class="project-item-icon-box">
@@ -589,7 +583,7 @@
               </a>
             </li>
 
-            <li class="project-item  active" data-filter-item data-category="web development">
+            <li class="project-item  active" data-filter-item data-category="web development" data-aos="fade-up">
               <a href="#">
                 <figure class="project-img">
                   <div class="project-item-icon-box">
@@ -654,7 +648,7 @@
               </a>
             </li>
 
-            <li class="project-item  active" data-filter-item data-category="web development">
+            <li class="project-item  active" data-filter-item data-category="web development" data-aos="fade-up">
               <a href="#">
                 <figure class="project-img">
                   <div class="project-item-icon-box">
@@ -698,14 +692,14 @@
 
       <!--- #BLOG-->
 
-      <article class="blog" data-page="blog">
+      <article class="blog" data-page="blog" data-aos="fade-up">
         <header>
           <h2 class="h2 article-title">Blog</h2>
         </header>
 
         <section class="blog-posts">
           <ul class="blog-posts-list">
-            <li class="blog-post-item">
+            <li class="blog-post-item" data-aos="fade-up">
               <a href="#">
                 <figure class="blog-banner-box">
                   <img src="./assets/images/blog-1.jpg" alt="Design conferences in 2022" loading="lazy">
@@ -726,7 +720,7 @@
               </a>
             </li>
 
-            <li class="blog-post-item">
+            <li class="blog-post-item" data-aos="fade-up">
               <a href="#">
                 <figure class="blog-banner-box">
                   <img src="./assets/images/blog-2.jpg" alt="Best fonts every designer" loading="lazy">
@@ -747,7 +741,7 @@
               </a>
             </li>
 
-            <li class="blog-post-item">
+            <li class="blog-post-item" data-aos="fade-up">
               <a href="#">
                 <figure class="blog-banner-box">
                   <img src="./assets/images/blog-3.jpg" alt="Design digest #80" loading="lazy">
@@ -766,7 +760,7 @@
               </a>
             </li>
 
-            <li class="blog-post-item">
+            <li class="blog-post-item" data-aos="fade-up">
               <a href="#">
                 <figure class="blog-banner-box">
                   <img src="./assets/images/blog-4.jpg" alt="UI interactions of the week" loading="lazy">
@@ -785,7 +779,7 @@
               </a>
             </li>
 
-            <li class="blog-post-item">
+            <li class="blog-post-item" data-aos="fade-up">
               <a href="#">
                 <figure class="blog-banner-box">
                   <img src="./assets/images/blog-5.jpg" alt="The forgotten art of spacing" loading="lazy">
@@ -828,7 +822,7 @@
 
       <!--- #CONTACT-->
 
-      <article class="contact" data-page="contact">
+      <article class="contact" data-page="contact" data-aos="fade-up">
         <header>
           <h2 class="h2 article-title">Contact</h2>
         </header>
@@ -867,6 +861,15 @@
   <!--- ionicon link-->
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+  <!--- aos js link-->
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 1000,
+      once: false,
+    });
+  </script>
 
 </body>
 

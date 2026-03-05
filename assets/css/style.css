@@ -233,7 +233,7 @@ article.active {
 .article-title::after {
   content: "";
   position: absolute;
-  bottom: 0;
+  bottom: 12px;
   left: 0;
   width: 30px;
   height: 3px;
@@ -486,9 +486,11 @@ main {
   line-height: 1.6;
 }
 
-.about-text p { margin-bottom: 15px; }
-
-
+.about-text p {
+    margin-bottom: 15px;
+    font-size: 15px;
+    line-height: 26px;
+}
 
 /**
  * #service 
@@ -531,10 +533,10 @@ main {
 .service-item-title { margin-bottom: 7px; }
 
 .service-item-text {
-  color: var(--light-gray);
-  font-size: var(--fs-6);
-  font-weight: var(--fw-3);
-  line-height: 1.6;
+    color: var(--light-gray);
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 1.6;
 }
 
 
@@ -1367,7 +1369,7 @@ textarea.form-input::-webkit-resizer { display: none; }
    * #ABOUT
    */
 
-  .about .article-title { margin-bottom: 20px; }
+  .about .article-title { margin-bottom: 8px; }
 
   .about-text { margin-bottom: 40px; }
 
