@@ -15,8 +15,8 @@
       hsla(36, 100%, 69%, 0) 50%
     ); */
   --bg-gradient-yellow-1: linear-gradient(to bottom right,
-      hsl(225.42deg 100% 72%),
-      hsla(240, 1%, 17%, 50%) 50%);
+      hsl(225.42deg 100% 72% / 50%),
+      hsla(240, 1%, 17%) 50%);
   --bg-gradient-yellow-2: linear-gradient(135deg,
       hsla(45, 100%, 71%, 0.251) 0%,
       hsla(35, 100%, 68%, 0) 59.86%), hsl(240, 2%, 13%);
@@ -645,6 +645,73 @@ main {
   background: var(--bg-gradient-yellow-1);
   color: #fff;
   border-color: var(--orange-yellow-crayola);
+}
+
+
+/**
+ * #certifications
+ */
+
+.certifications {
+  margin-bottom: 30px;
+}
+
+.cert-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.cert-item {
+  position: relative;
+  background: var(--border-gradient-onyx);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: var(--shadow-2);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  z-index: 1;
+  transition: all 0.5s ease;
+}
+
+.cert-item:hover {
+  transform: translateY(-5px);
+  background: var(--bg-gradient-yellow-1);
+}
+
+.cert-item::before {
+  content: "";
+  position: absolute;
+  inset: 1px;
+  background: var(--bg-gradient-jet);
+  border-radius: inherit;
+  z-index: -1;  
+}
+
+.cert-title {
+  font-size: 15px;
+  font-weight: 400;
+  margin-bottom: 8px;
+  line-height: 1.5;
+}
+
+.cert-provider {
+  color: var(--light-gray);
+  font-size: 13px;
+  font-weight: 300;
+}
+
+.cert-link {
+  color: var(--orange-yellow-crayola);
+  font-size: 24px;
+  transition: var(--transition-1);
+  transform: rotate(-45deg);
+}
+
+.cert-link:hover {
+  transform: rotate(-30deg);
 }
 
 
@@ -1891,7 +1958,8 @@ textarea.form-input::-webkit-resizer {
   /* portfolio and blog grid */
 
   .project-list,
-  .blog-posts-list {
+  .blog-posts-list,
+  .cert-list {
     grid-template-columns: 1fr 1fr;
   }
 
@@ -2024,7 +2092,8 @@ textarea.form-input::-webkit-resizer {
    * PORTFOLIO
    */
 
-  .project-list {
+  .project-list,
+  .cert-list {
     grid-template-columns: repeat(3, 1fr);
   }
 
