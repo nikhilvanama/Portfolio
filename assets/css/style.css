@@ -634,7 +634,7 @@ main {
   color: var(--white-2);
   padding: 6px 15px;
   border-radius: 8px;
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 300;
   border: 1px solid var(--jet);
   transition: var(--transition-1);
@@ -658,7 +658,7 @@ main {
 
 .cert-list {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: 1fr;
   gap: 20px;
 }
 
@@ -687,7 +687,7 @@ main {
   inset: 1px;
   background: var(--bg-gradient-jet);
   border-radius: inherit;
-  z-index: -1;  
+  z-index: -1;
 }
 
 .cert-title {
@@ -712,6 +712,73 @@ main {
 
 .cert-link:hover {
   transform: rotate(-30deg);
+}
+
+
+/**
+ * #habits
+ */
+
+.habits {
+  margin-bottom: 30px;
+}
+
+.habits-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 15px;
+}
+
+.habit-item {
+  position: relative;
+  background: var(--border-gradient-onyx);
+  padding: 12px 20px;
+  border-radius: 12px;
+  box-shadow: var(--shadow-2);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  z-index: 1;
+  transition: var(--transition-1);
+}
+
+.habit-item::before {
+  content: "";
+  position: absolute;
+  inset: 1px;
+  background: var(--bg-gradient-jet);
+  border-radius: inherit;
+  z-index: -1;
+  transition: var(--transition-1);
+}
+
+.habit-item:hover {
+  transform: translateY(-3px);
+  background: var(--bg-gradient-yellow-1);
+}
+
+.habit-item:hover::before {
+  opacity: 0;
+}
+
+.habit-item:hover .habit-icon,
+.habit-item:hover .habit-text {
+  color: var(--white-1);
+}
+
+.habit-icon {
+  color: var(--orange-yellow-crayola);
+  font-size: 18px;
+  transition: var(--transition-1);
+}
+
+.habit-text {
+  color: var(--white-2);
+  font-size: var(--fs-7);
+  font-weight: var(--fw-300);
+  transition: var(--transition-1);
 }
 
 
