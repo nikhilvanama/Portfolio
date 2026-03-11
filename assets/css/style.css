@@ -1064,6 +1064,23 @@ main {
   margin-top: 2px;
 }
 
+.company-link {
+  color: inherit;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  transition: var(--transition-1);
+}
+
+.company-link:hover {
+  color: var(--violet-crayola);
+}
+
+.company-link ion-icon {
+  font-size: 14px;
+  --ionicon-stroke-width: 50px;
+}
+
 .timeline-meta {
   text-align: right;
   min-width: max-content;
