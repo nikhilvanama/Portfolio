@@ -1057,6 +1057,13 @@ main {
   margin-bottom: 8px;
 }
 
+.timeline-company {
+  color: var(--white-2);
+  font-size: 14px;
+  font-weight: var(--fw-300);
+  margin-top: 2px;
+}
+
 .timeline-meta {
   text-align: right;
   min-width: max-content;
