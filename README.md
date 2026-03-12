@@ -55,6 +55,23 @@ An interactive contact form and location map for seamless professional communica
 
 ---
 
+## 🔍 How it Works (Technical Details)
+
+The portfolio is built with a custom-designed single-page architecture that prioritizes performance and smooth transitions.
+
+### 🏗️ Architecture
+- **Navigation Logic:** A custom `data-nav-link` system handles switching between different "pages" (articles) without reloading the browser.
+- **Theme & Styling:** CSS variables are used for consistent dark-theme coloring, glassmorphism effects, and responsive layout calculations.
+- **Animations:**
+  - **AOS (Animate On Scroll):** Managed via `AOS.init()` to reveal sections elegantly as the user scrolls.
+  - **CSS Transitions:** Micro-interactions (hover effects, button scales) are handled purely with hardware-accelerated CSS.
+
+### 📱 Responsive Strategy
+- Uses a mobile-first approach with flexible `rem` and `em` units.
+- Sidebar collapses into a compact header on smaller screens using media queries.
+
+---
+
 ## ⚙️ Installation & Cloning
 
 If you'd like to use this portfolio as a template or study its architecture, you can clone it locally:
