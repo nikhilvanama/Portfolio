@@ -873,8 +873,85 @@ main {
 
 
 /**
- * #testimonials 
+ * #philosophy
  */
+
+.philosophy {
+  margin-bottom: 35px;
+}
+
+.philosophy-content {
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 30px;
+  align-items: center;
+}
+
+.philosophy-text {
+  color: var(--light-gray);
+  font-size: var(--fs-6);
+  font-weight: var(--fw-300);
+  line-height: 1.6;
+}
+
+.philosophy-text h4 {
+  margin-bottom: 10px;
+  background: var(--text-gradient-blue);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.philosophy-image-container {
+  width: 100%;
+  max-width: 450px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  perspective: 1000px;
+}
+
+.philosophy-image-interactive {
+  width: 100%;
+  position: relative;
+  cursor: pointer;
+  transform-style: preserve-3d;
+}
+
+.interactive-3d-asset {
+  width: 100%;
+  border-radius: 20px;
+  filter: drop-shadow(0 0 20px rgba(138, 43, 226, 0.4));
+  transition: transform 0.15s ease-out;
+  pointer-events: none; /* Let container handle mouse events */
+}
+
+/* Base floating animation when not hovering */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.philosophy-image-interactive:not(:hover) .interactive-3d-asset {
+  animation: float 6s ease-in-out infinite;
+}
+
+@media (min-width: 1024px) {
+  .philosophy-content {
+    flex-direction: row;
+    gap: 60px;
+    align-items: center;
+  }
+
+  .philosophy-text {
+    flex: 1.2;
+  }
+
+  .philosophy-image-container {
+    flex: 1;
+    max-width: 550px;
+  }
+}
 
 .testimonials {
   margin-bottom: 30px;

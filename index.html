@@ -306,9 +306,7 @@
               <p class="habit-text">Video Editing</p>
             </li>
           </ul>
-        </section>
-
-        <!-- Achievements -->
+        </section>        <!-- Achievements -->
         <section class="achievements" data-aos="fade-up">
           <h3 class="h3 service-title">Achievements</h3>
 
@@ -318,7 +316,7 @@
                 <ion-icon name="globe-outline"></ion-icon>
               </div>
               <div class="achievement-content">
-                <h4 class="achievement-number">25+</h4>
+                <h4 class="achievement-number">15+</h4>
                 <p class="achievement-text">Websites Delivered</p>
               </div>
             </li>
@@ -345,6 +343,30 @@
           </ul>
         </section>
 
+        <!-- Philosophy & Innovation -->
+        <section class="philosophy" data-aos="fade-up">
+          <h3 class="h3 service-title">Innovation & Philosophy</h3>
+
+          <div class="philosophy-content">
+            <div class="philosophy-text" data-aos="fade-right">
+              <h4 class="h4">Brain-Centric "Vibe Coding"</h4>
+              <p>
+                In the era of AI, I embrace <strong>vibe coding</strong>—a philosophy where I use my brain for high-level structuring, planning, and recursive algorithmic logic. I act as the architect, explaining the "vibe" and complex system requirements to intelligent agents that assist in rapid execution.
+              </p>
+              <br>
+              <h4 class="h4">My SAP Journey</h4>
+              <p>
+                My exploration into the <strong>SAP Ecosystem</strong> is driven by a passion for enterprise-level harmony. From mastering Fiori and ABAP to diving deep into BTP and HANA, I am building the future of intelligent ERP frontends that combine robust architecture with modern usability.
+              </p>
+            </div>
+
+            <div class="philosophy-image-container" data-aos="fade-left">
+              <div class="philosophy-image-interactive">
+                <img src="./assets/images/interactive_globe_nodes_transparent.png" alt="Innovation & Philosophy 3D Illustration" class="interactive-3d-asset">
+              </div>
+            </div>
+          </div>
+        </section>
 
         <!-- Testimonials -->
 
@@ -1050,6 +1072,34 @@
       duration: 1000,
       once: false,
     });
+
+    // 3D Tilt Effect for Philosophy Image
+    const container = document.querySelector('.philosophy-image-interactive');
+    const asset = document.querySelector('.interactive-3d-asset');
+
+    if (container && asset) {
+      container.addEventListener('mousemove', (e) => {
+        const { left, top, width, height } = container.getBoundingClientRect();
+        const x = (e.clientX - left) / width - 0.5;
+        const y = (e.clientY - top) / height - 0.5;
+
+        asset.style.transform = `
+          perspective(1000px)
+          rotateY(${x * 30}deg)
+          rotateX(${-y * 30}deg)
+          scale3d(1.05, 1.05, 1.05)
+        `;
+      });
+
+      container.addEventListener('mouseleave', () => {
+        asset.style.transform = `
+          perspective(1000px)
+          rotateY(0deg)
+          rotateX(0deg)
+          scale3d(1, 1, 1)
+        `;
+      });
+    }
   </script>
 
 </body>
