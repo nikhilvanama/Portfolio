@@ -922,14 +922,24 @@ main {
   width: 100%;
   border-radius: 20px;
   filter: drop-shadow(0 0 20px rgba(138, 43, 226, 0.4));
+  mix-blend-mode: screen;
+  /* Merges black background with dark portfolio theme */
   transition: transform 0.15s ease-out;
-  pointer-events: none; /* Let container handle mouse events */
+  pointer-events: none;
+  /* Let container handle mouse events */
 }
 
 /* Base floating animation when not hovering */
 @keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
 }
 
 .philosophy-image-interactive:not(:hover) .interactive-3d-asset {
