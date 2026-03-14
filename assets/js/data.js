@@ -14,6 +14,15 @@ const sidebarData = {
 };
 
 /**
+ * About Data
+ * Content for the "About me" section.
+ */
+const aboutData = [
+  "I’m Nikhil Vanama, a Software Engineer focused on building modern web applications and intuitive digital experiences. I enjoy turning complex ideas into simple, scalable, and user-friendly solutions. My work includes web design, frontend engineering, and WordPress development, creating responsive and visually engaging products across industries like healthcare, government services, logistics, and business platforms.",
+  "Beyond web development, I’m highly interested in enterprise systems and the future of digital platforms. I’m currently exploring the SAP ecosystem, learning Fiori, ABAP, HANA, BTP, and CAP, with the goal of building intelligent ERP system frontends that combine usability, performance, and strong enterprise-level architecture."
+];
+
+/**
  * Populate Sidebar Data
  * Replaces the text content of specific elements in the sidebar
  * without modifying the surrounding HTML structure.
@@ -21,6 +30,7 @@ const sidebarData = {
 
 // Wait for the DOM to be fully loaded
 document.addEventListener("DOMContentLoaded", () => {
+
   // Populate Name
   const nameEl = document.querySelector("[data-sidebar-name]");
   if (nameEl) {
@@ -52,6 +62,16 @@ document.addEventListener("DOMContentLoaded", () => {
   // Populate Location
   const locationEl = document.querySelector("[data-sidebar-location]");
   if (locationEl) locationEl.textContent = sidebarData.location;
+
+  // Populate About Text
+  const aboutContainer = document.getElementById("about-text-container");
+  if (aboutContainer && typeof aboutData !== 'undefined') {
+    aboutData.forEach(text => {
+      const p = document.createElement("p");
+      p.textContent = text;
+      aboutContainer.appendChild(p);
+    });
+  }
 });
 
 /**
