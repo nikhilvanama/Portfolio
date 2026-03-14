@@ -363,6 +363,9 @@ main {
   width: max-content;
   padding: 3px 12px;
   border-radius: 8px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
 .info_more-btn {
@@ -2212,6 +2215,13 @@ textarea.form-input::-webkit-resizer {
     width: 100px;
   }
 
+  .info-content .name {
+    font-size: var(--fs-2);
+  }
+
+  .article-title::after {
+    bottom: 5px;
+  }
 
 
   /**
