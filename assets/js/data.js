@@ -239,3 +239,194 @@ if (philosophyTextContainer && philosophyTemplate && typeof philosophyData !== '
     philosophyTextContainer.appendChild(templateClone);
   });
 }
+
+/**
+ * Skills Data
+ * Content for the "Skills" section (categories and lists of badges).
+ */
+const skillsData = [
+  {
+    category: "Web Development",
+    skills: ["HTML5", "CSS3", "Bootstrap", "Tailwind CSS", "JavaScript (ES6+)", "TypeScript (basic)", "React.js", "Angular (v18+)", "REST APIs", "Responsive Web Design", "Web Animations (GSAP)", "DOM Manipulation", "Cross-browser Compatibility"]
+  },
+  {
+    category: "Programming & Scripting",
+    skills: ["JavaScript", "Python (for problem solving)", "Node.js", "PHP (basic)"]
+  },
+  {
+    category: "Databases / Cloud",
+    skills: ["MySQL", "PostgreSQL", "Firebase Realtime DB", "AWS (basic)", "DBMS Concepts", "Cloud Concepts", "Data Modeling Basics"]
+  },
+  {
+    category: "UI / Web Design",
+    skills: ["Figma", "UI/UX Principles", "Wireframing", "Layout Design", "Responsive Design", "Design Systems", "Spline", "Canva"]
+  },
+  {
+    category: "WordPress Development",
+    skills: ["WordPress CMS", "Custom Theme Development", "Plugin Integration", "Elementor / Page Builders", "Custom Post Types", "WordPress Admin Management"]
+  },
+  {
+    category: "Enterprise & SAP Learning",
+    skills: ["SAP Fundamentals", "SAP Fiori (Learning)", "ABAP Basics (Learning)", "SAP HANA Concepts", "SAP BTP Overview", "SAP CAP Basics"]
+  },
+  {
+    category: "Development Tools",
+    skills: ["Git", "GitHub", "GitHub Copilot", "VS Code", "Google Antigravity", "Cursor", "Claude", "Chrome DevTools", "Postman", "Jira"]
+  }
+];
+
+const skillsListContainer = document.getElementById("skills-list-container");
+const skillCategoryTemplate = document.getElementById("skill-category-template");
+
+if (skillsListContainer && skillCategoryTemplate && typeof skillsData !== 'undefined') {
+  skillsData.forEach(cat => {
+    // Clone category template
+    const templateClone = skillCategoryTemplate.content.cloneNode(true);
+    
+    // Set title
+    const titleH4 = templateClone.querySelector(".skill-title");
+    titleH4.textContent = cat.category;
+
+    // Populate skill list
+    const ul = templateClone.querySelector(".skill-list");
+    cat.skills.forEach(skill => {
+      const li = document.createElement("li");
+      li.className = "skill-badge";
+      li.textContent = skill;
+      ul.appendChild(li);
+    });
+
+    skillsListContainer.appendChild(templateClone);
+  });
+}
+
+/**
+ * Timeline Data (Education, Experience, Internships)
+ */
+const educationData = [
+  {
+    title: "Vasireddy venkatadri Institute of Technology",
+    years: "2020 — 2024",
+    cgpa: "8.33 CGPA",
+    degree: "CSE (IOT)",
+    text: "Bachelor of Technology"
+  },
+  {
+    title: "Sri Chaitanya Junior College",
+    years: "2018 — 2020",
+    cgpa: "9.55 CGPA",
+    degree: "12th Grade",
+    text: "Board of Intermediate Education"
+  },
+  {
+    title: "Sri Saraswathi Vidyalaya High School",
+    years: "2017 — 2018",
+    cgpa: "9.7 CGPA",
+    degree: "10th Grade",
+    text: "Board of Secondary Education"
+  }
+];
+
+const experienceData = [
+  {
+    title: "Web Developer",
+    company: "Mediacle Technologies",
+    link: "https://www.mediacle.com/",
+    years: "22nd Sept 2025 — Present",
+    location: "Bangalore, Karnataka",
+    text: "Nemo enim ipsam voluptatem blanditiis praesentium voluptum delenit atque corrupti, quos dolores et qvuas molestias exceptur."
+  },
+  {
+    title: "Associate Software Engineer",
+    company: "Seldom Technologies",
+    link: "https://www.seldomtechnologies.com/",
+    years: "Dec 2023 — 19th Sept 2025",
+    location: "Mangalagiri, Andhra Pradesh",
+    text: "Nemo enims ipsam voluptatem, blanditiis praesentium voluptum delenit atque corrupti, quos dolores et quas molestias exceptur."
+  }
+];
+
+const internshipsData = [
+  {
+    title: "Jnr Frontend Developer",
+    company: "Seldom Technologies",
+    link: "https://www.seldomtechnologies.com/",
+    years: "Dec 2023 — March 2024",
+    location: "Mangalagiri, Andhra Pradesh",
+    text: "Contributed to the development of responsive user interfaces using HTML, CSS, and JavaScript. Assisted in optimizing website performance and fixing UI bugs across various client projects."
+  },
+  {
+    title: "Web Development",
+    company: "Global Education Technologies",
+    link: "https://www.seldomtechnologies.com/",
+    years: "Jan 2024 — March 2024",
+    location: "Virtual",
+    text: ""
+  },
+  {
+    title: "Data Science Internship",
+    company: "Skill AP(APSSDC), Indo-Euro Synchronization Pvt Ltd",
+    link: "https://www.seldomtechnologies.com/",
+    years: "May 2023 — July 2023",
+    location: "Virtual",
+    text: "Played a key role in developing a German language translation model using NLP and Python algorithms, leading a team to deliver the project on time and demonstrating strong leadership and technical skills."
+  },
+  {
+    title: "Cybersecurity Virtual Internship",
+    company: "Paloalto Networks, Eduskills",
+    link: "https://www.seldomtechnologies.com/",
+    years: "May 2023 — July 2023",
+    location: "Virtual",
+    text: ""
+  },
+  {
+    title: "Salesforce Developer Virtual Internship",
+    company: "Salesforce",
+    link: "https://www.seldomtechnologies.com/",
+    years: "April 2023 — May 2023",
+    location: "Virtual",
+    text: ""
+  }
+];
+
+// Helper function to populate experience/internship templates
+function populateExperienceTemplate(dataArray, listContainer, templateElem) {
+  if (!listContainer || !templateElem || typeof dataArray === 'undefined') return;
+  
+  dataArray.forEach(item => {
+    const clone = templateElem.content.cloneNode(true);
+    
+    clone.querySelector(".timeline-item-title").textContent = item.title;
+    clone.querySelector(".company-name").textContent = item.company;
+    clone.querySelector(".company-link").setAttribute("href", item.link);
+    clone.querySelector(".years").textContent = item.years;
+    clone.querySelector(".location").textContent = item.location;
+    clone.querySelector(".timeline-text").textContent = item.text;
+    
+    listContainer.appendChild(clone);
+  });
+}
+
+// 1. Render Education
+const educationList = document.getElementById("education-list");
+const educationTemplate = document.getElementById("education-item-template");
+if (educationList && educationTemplate && typeof educationData !== 'undefined') {
+  educationData.forEach(item => {
+    const clone = educationTemplate.content.cloneNode(true);
+    clone.querySelector(".timeline-item-title").textContent = item.title;
+    clone.querySelector(".years").textContent = item.years;
+    clone.querySelector(".cgpa").textContent = item.cgpa;
+    clone.querySelector(".degree").textContent = item.degree;
+    clone.querySelector(".timeline-text").textContent = item.text;
+    educationList.appendChild(clone);
+  });
+}
+
+// 2. Render Experience
+const experienceList = document.getElementById("experience-list");
+const experienceTemplate = document.getElementById("experience-item-template");
+populateExperienceTemplate(experienceData, experienceList, experienceTemplate);
+
+// 3. Render Internships (Reusing the Experience template because structure matches)
+const internshipsList = document.getElementById("internships-list");
+populateExperienceTemplate(internshipsData, internshipsList, experienceTemplate);

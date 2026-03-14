@@ -411,104 +411,16 @@
 
         <!-- Skills -->
         <section class="skills">
-          <div class="skills-content">
-            <!-- Technical Skills -->
-            <div class="skills-category" data-aos="fade-up">
-              <h4 class="skill-title">Web Development</h4>
-              <ul class="skill-list">
-                <li class="skill-badge">HTML5</li>
-                <li class="skill-badge">CSS3</li>
-                <li class="skill-badge">Bootstrap</li>
-                <li class="skill-badge">Tailwind CSS</li>
-                <li class="skill-badge">JavaScript (ES6+)</li>
-                <li class="skill-badge">TypeScript (basic)</li>
-                <li class="skill-badge">React.js</li>
-                <li class="skill-badge">Angular (v18+)</li>
-                <li class="skill-badge">REST APIs</li>
-                <li class="skill-badge">Responsive Web Design</li>
-                <li class="skill-badge">Web Animations (GSAP)</li>
-                <li class="skill-badge">DOM Manipulation</li>
-                <li class="skill-badge">Cross-browser Compatibility</li>
-              </ul>
-            </div>
-
-            <div class="skills-category" data-aos="fade-up">
-              <h4 class="skill-title">Programming & Scripting</h4>
-              <ul class="skill-list">
-                <li class="skill-badge">JavaScript</li>
-                <li class="skill-badge">Python (for problem solving)</li>
-                <li class="skill-badge">Node.js</li>
-                <li class="skill-badge">PHP (basic)</li>
-              </ul>
-            </div>
-
-            <div class="skills-category" data-aos="fade-up">
-              <h4 class="skill-title">Databases / Cloud</h4>
-              <ul class="skill-list">
-                <li class="skill-badge">MySQL</li>
-                <li class="skill-badge">PostgreSQL</li>
-                <li class="skill-badge">Firebase Realtime DB</li>
-                <li class="skill-badge">AWS (basic)</li>
-                <li class="skill-badge">DBMS Concepts</li>
-                <li class="skill-badge">Cloud Concepts</li>
-                <li class="skill-badge">Data Modeling Basics</li>
-              </ul>
-            </div>
-
-            <div class="skills-category" data-aos="fade-up">
-              <h4 class="skill-title">UI / Web Design</h4>
-              <ul class="skill-list">
-                <li class="skill-badge">Figma</li>
-                <li class="skill-badge">UI/UX Principles</li>
-                <li class="skill-badge">Wireframing</li>
-                <li class="skill-badge">Layout Design</li>
-                <li class="skill-badge">Responsive Design</li>
-                <li class="skill-badge">Design Systems</li>
-                <li class="skill-badge">Spline</li>
-                <li class="skill-badge">Canva</li>
-              </ul>
-            </div>
-
-            <div class="skills-category" data-aos="fade-up">
-              <h4 class="skill-title">WordPress Development</h4>
-              <ul class="skill-list">
-                <li class="skill-badge">WordPress CMS</li>
-                <li class="skill-badge">Custom Theme Development</li>
-                <li class="skill-badge">Plugin Integration</li>
-                <li class="skill-badge">Elementor / Page Builders</li>
-                <li class="skill-badge">Custom Post Types</li>
-                <li class="skill-badge">WordPress Admin Management</li>
-              </ul>
-            </div>
-
-            <div class="skills-category" data-aos="fade-up">
-              <h4 class="skill-title">Enterprise & SAP Learning</h4>
-              <ul class="skill-list">
-                <li class="skill-badge">SAP Fundamentals</li>
-                <li class="skill-badge">SAP Fiori (Learning)</li>
-                <li class="skill-badge">ABAP Basics (Learning)</li>
-                <li class="skill-badge">SAP HANA Concepts</li>
-                <li class="skill-badge">SAP BTP Overview</li>
-                <li class="skill-badge">SAP CAP Basics</li>
-              </ul>
-            </div>
-
-            <div class="skills-category" data-aos="fade-up">
-              <h4 class="skill-title">Development Tools</h4>
-              <ul class="skill-list">
-                <li class="skill-badge">Git</li>
-                <li class="skill-badge">GitHub</li>
-                <li class="skill-badge">GitHub Copilot</li>
-                <li class="skill-badge">VS Code</li>
-                <li class="skill-badge">Google Antigravity</li>
-                <li class="skill-badge">Cursor</li>
-                <li class="skill-badge">Claude</li>
-                <li class="skill-badge">Chrome DevTools</li>
-                <li class="skill-badge">Postman</li>
-                <li class="skill-badge">Jira</li>
-              </ul>
-            </div>
+          <div class="skills-content" id="skills-list-container">
+            <!-- Skills will be populated dynamically by data.js using the template below -->
           </div>
+
+          <template id="skill-category-template">
+            <div class="skills-category" data-aos="fade-up">
+              <h4 class="skill-title"></h4>
+              <ul class="skill-list"></ul>
+            </div>
+          </template>
         </section>
 
         <!-- Certifications -->
@@ -563,55 +475,25 @@
             <h3 class="h3">Education</h3>
           </div>
 
-          <ol class="timeline-list">
-            <li class="timeline-item" data-aos="fade-left">
-              <div class="timeline-content-wrapper">
-                <div class="timeline-text-block">
-                  <h4 class="h4 timeline-item-title">Vasireddy venkatadri Institute of Technology</h4>
-                  <span class="years">2020 — 2024</span>
-                </div>
-                <div class="timeline-meta">
-                  <span class="cgpa">8.33 CGPA</span>
-                  <span>CSE (IOT)</span>
-                </div>
-              </div>
-              <p class="timeline-text">
-                Bachelor of Technology
-              </p>
-            </li>
-
-            <li class="timeline-item" data-aos="fade-left">
-              <div class="timeline-content-wrapper">
-                <div class="timeline-text-block">
-                  <h4 class="h4 timeline-item-title">Sri Chaitanya Junior College</h4>
-                  <span class="years">2018 — 2020</span>
-                </div>
-                <div class="timeline-meta">
-                  <span class="cgpa">9.55 CGPA</span>
-                  <span>12th Grade</span>
-                </div>
-              </div>
-              <p class="timeline-text">
-                Board of Intermediate Education
-              </p>
-            </li>
-
-            <li class="timeline-item">
-              <div class="timeline-content-wrapper">
-                <div class="timeline-text-block">
-                  <h4 class="h4 timeline-item-title">Sri Saraswathi Vidyalaya High School</h4>
-                  <span class="years">2017 — 2018</span>
-                </div>
-                <div class="timeline-meta">
-                  <span class="cgpa">9.7 CGPA</span>
-                  <span>10th Grade</span>
-                </div>
-              </div>
-              <p class="timeline-text">
-                Board of Secondary Education
-              </p>
-            </li>
+          <ol class="timeline-list" id="education-list">
+            <!-- Education items will be populated dynamically -->
           </ol>
+
+          <template id="education-item-template">
+            <li class="timeline-item" data-aos="fade-left">
+              <div class="timeline-content-wrapper">
+                <div class="timeline-text-block">
+                  <h4 class="h4 timeline-item-title"></h4>
+                  <span class="years"></span>
+                </div>
+                <div class="timeline-meta">
+                  <span class="cgpa"></span>
+                  <span class="degree"></span>
+                </div>
+              </div>
+              <p class="timeline-text"></p>
+            </li>
+          </template>
         </section>
 
         <section class="timeline prof-experience">
@@ -622,53 +504,30 @@
             <h3 class="h3">Experience</h3>
           </div>
 
-          <ol class="timeline-list">
-            <li class="timeline-item" data-aos="fade-right">
-              <div class="timeline-content-wrapper">
-                <div class="timeline-text-block">
-                  <h4 class="h4 timeline-item-title">Web Developer</h4>
-                  <p class="timeline-company">
-                    <a href="https://www.mediacle.com/" target="_blank" class="company-link">
-                      Mediacle Technologies
-                      <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 11px;"></i>
-                    </a>
-                  </p>
-                </div>
-                <div class="timeline-meta">
-                  <span class="years">22nd Sept 2025 — Present</span>
-                  <span>Bangalore, Karnataka</span>
-                </div>
-              </div>
-              <p class="timeline-text">
-                Nemo enim ipsam voluptatem blanditiis praesentium voluptum delenit atque corrupti, quos dolores et qvuas
-                molestias
-                exceptur.
-              </p>
-            </li>
-
-            <li class="timeline-item" data-aos="fade-right">
-              <div class="timeline-content-wrapper">
-                <div class="timeline-text-block">
-                  <h4 class="h4 timeline-item-title">Associate Software Engineer</h4>
-                  <p class="timeline-company">
-                    <a href="https://www.seldomtechnologies.com/" target="_blank" class="company-link">
-                      Seldom Technologies
-                      <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 11px;"></i>
-                    </a>
-                  </p>
-                </div>
-                <div class="timeline-meta">
-                  <span class="years">Dec 2023 — 19th Sept 2025</span>
-                  <span>Mangalagiri, Andhra Pradesh</span>
-                </div>
-              </div>
-              <p class="timeline-text">
-                Nemo enims ipsam voluptatem, blanditiis praesentium voluptum delenit atque corrupti, quos dolores et
-                quas molestias
-                exceptur.
-              </p>
-            </li>
+          <ol class="timeline-list" id="experience-list">
+            <!-- Experience items will be populated dynamically -->
           </ol>
+
+          <template id="experience-item-template">
+            <li class="timeline-item" data-aos="fade-right">
+              <div class="timeline-content-wrapper">
+                <div class="timeline-text-block">
+                  <h4 class="h4 timeline-item-title"></h4>
+                  <p class="timeline-company">
+                    <a href="" target="_blank" class="company-link">
+                      <span class="company-name"></span>
+                      <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 11px;"></i>
+                    </a>
+                  </p>
+                </div>
+                <div class="timeline-meta">
+                  <span class="years"></span>
+                  <span class="location"></span>
+                </div>
+              </div>
+              <p class="timeline-text"></p>
+            </li>
+          </template>
         </section>
 
         <section class="timeline internships" data-aos="fade-up">
@@ -679,107 +538,8 @@
             <h3 class="h3">Internships</h3>
           </div>
 
-          <ol class="timeline-list">
-            <li class="timeline-item" data-aos="fade-right">
-              <div class="timeline-content-wrapper">
-                <div class="timeline-text-block">
-                  <h4 class="h4 timeline-item-title">Jnr Frontend Developer</h4>
-                  <p class="timeline-company">
-                    <a href="https://www.seldomtechnologies.com/" target="_blank" class="company-link">
-                      Seldom Technologies
-                      <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 11px;"></i>
-                    </a>
-                  </p>
-                </div>
-                <div class="timeline-meta">
-                  <span class="years">Dec 2023 — March 2024</span>
-                  <span>Mangalagiri, Andhra Pradesh</span>
-                </div>
-              </div>
-              <p class="timeline-text">
-                Contributed to the development of responsive user interfaces using HTML, CSS, and JavaScript. Assisted in optimizing website performance and fixing UI bugs across various client projects.
-              </p>
-            </li>
-
-            <li class="timeline-item" data-aos="fade-right">
-              <div class="timeline-content-wrapper">
-                <div class="timeline-text-block">
-                  <h4 class="h4 timeline-item-title">Web Development</h4>
-                  <p class="timeline-company">
-                    <a href="https://www.seldomtechnologies.com/" target="_blank" class="company-link">
-                      Global Education Technologies
-                      <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 11px;"></i>
-                    </a>
-                  </p>
-                </div>
-                <div class="timeline-meta">
-                  <span class="years">Jan 2024 — March 2024</span>
-                  <span>Virtual</span>
-                </div>
-              </div>
-              <p class="timeline-text">
-              </p>
-            </li>
-            
-            <li class="timeline-item" data-aos="fade-right">
-              <div class="timeline-content-wrapper">
-                <div class="timeline-text-block">
-                  <h4 class="h4 timeline-item-title">Data Science Internship</h4>
-                  <p class="timeline-company">
-                    <a href="https://www.seldomtechnologies.com/" target="_blank" class="company-link">
-                      Skill AP(APSSDC), Indo-Euro Synchronization Pvt Ltd
-                      <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 11px;"></i>
-                    </a>
-                  </p>
-                </div>
-                <div class="timeline-meta">
-                  <span class="years">17th April - 23rd Sept 2023</span>
-                  <span>Virtual</span>
-                </div>
-              </div>
-              <p class="timeline-text">
-              </p>
-            </li>
-
-            <li class="timeline-item" data-aos="fade-right">
-              <div class="timeline-content-wrapper">
-                <div class="timeline-text-block">
-                  <h4 class="h4 timeline-item-title">Cybersecurity Virtual Internship</h4>
-                  <p class="timeline-company">
-                    <a href="https://www.seldomtechnologies.com/" target="_blank" class="company-link">
-                      Paloalto Networks, Eduskills
-                      <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 11px;"></i>
-                    </a>
-                  </p>
-                </div>
-                <div class="timeline-meta">
-                  <span class="years">May 2023 — July 2023</span>
-                  <span>Virtual</span>
-                </div>
-              </div>
-              <p class="timeline-text">
-              </p>
-            </li>
-            
-            <li class="timeline-item" data-aos="fade-right">
-              <div class="timeline-content-wrapper">
-                <div class="timeline-text-block">
-                  <h4 class="h4 timeline-item-title">Salesforce Developer Virtual Internship</h4>
-                  <p class="timeline-company">
-                    <a href="https://www.seldomtechnologies.com/" target="_blank" class="company-link">
-                      Salesforce
-                      <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 11px;"></i>
-                    </a>
-                  </p>
-                </div>
-                <div class="timeline-meta">
-                  <span class="years">April 2023 — May 2023</span>
-                  <span>Virtual</span>
-                </div>
-              </div>
-              <p class="timeline-text">
-              </p>
-            </li>
+          <ol class="timeline-list" id="internships-list">
+            <!-- Internship items will be populated dynamically -->
           </ol>
         </section>
 
