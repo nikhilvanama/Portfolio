@@ -31,7 +31,7 @@
   <!--- #MAIN-->
   <main>
     <!--- #SIDEBAR-->
-    <aside class="sidebar" data-sidebar data-aos="fade-in">
+    <aside class="sidebar" data-sidebar>
       <div class="sidebar-info">
         <figure class="avatar-box">
           <img src="./assets/images/my-avatar.png" alt="Vanama Nikhil" width="80">
@@ -541,6 +541,29 @@
           <ol class="timeline-list" id="internships-list">
             <!-- Internship items will be populated dynamically -->
           </ol>
+
+          <template id="internships-item-template">
+            <li class="timeline-item" data-aos="fade-right">
+              <div class="timeline-content-wrapper">
+                <div class="timeline-text-block">
+                  <h4 class="h4 timeline-item-title internship-title-wrapper">
+                    <a href="" target="_blank" class="certificate-link">
+                      <span class="internship-title-text"></span>
+                      <i class="fa-solid fa-link"></i>
+                    </a>
+                  </h4>
+                  <p class="timeline-company">
+                    <span class="company-name"></span>
+                  </p>
+                </div>
+                <div class="timeline-meta">
+                  <span class="years"></span>
+                  <span class="location"></span>
+                </div>
+              </div>
+              <p class="timeline-text"></p>
+            </li>
+          </template>
         </section>
 
         <!-- <section class="skill">

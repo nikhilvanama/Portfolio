@@ -1333,6 +1333,22 @@ main {
   font-size: 13px;
 }
 
+.certificate-link i {
+  font-size: 11px;
+  color: var(--vegas-blue) !important;
+  transition: 0.25s ease;
+}
+
+.certificate-link:hover i {
+  color: var(--violet-crayola) !important;
+}
+
+.internship-title-wrapper .certificate-link {
+  display: flex !important;
+  align-items: center;
+  gap: 8px;
+}
+
 /**
  * skills 
  */

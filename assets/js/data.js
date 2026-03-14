@@ -251,7 +251,7 @@ const skillsData = [
   },
   {
     category: "Programming & Scripting",
-    skills: ["JavaScript", "Python (for problem solving)", "Node.js", "PHP (basic)"]
+    skills: ["JavaScript", "Python (for problem solving)", "Node.js", "PHP (basic)", "C", "Java(basic)", "SQL"]
   },
   {
     category: "Databases / Cloud",
@@ -348,17 +348,17 @@ const experienceData = [
 
 const internshipsData = [
   {
-    title: "Jnr Frontend Developer",
+    title: "Jr. Web Developer Intern",
     company: "Seldom Technologies",
-    link: "https://www.seldomtechnologies.com/",
+    certificateLink: "./assets/documents/internships/seldom-internship.pdf",
     years: "Dec 2023 — March 2024",
     location: "Mangalagiri, Andhra Pradesh",
     text: "Contributed to the development of responsive user interfaces using HTML, CSS, and JavaScript. Assisted in optimizing website performance and fixing UI bugs across various client projects."
   },
   {
     title: "Web Development",
-    company: "Global Education Technologies",
-    link: "https://www.seldomtechnologies.com/",
+    company: "Global Education Technology",
+    certificateLink: "./assets/documents/internships/global-technology-internship.pdf",
     years: "Jan 2024 — March 2024",
     location: "Virtual",
     text: ""
@@ -366,7 +366,7 @@ const internshipsData = [
   {
     title: "Data Science Internship",
     company: "Skill AP(APSSDC), Indo-Euro Synchronization Pvt Ltd",
-    link: "https://www.seldomtechnologies.com/",
+    certificateLink: "./assets/documents/internships/skillap-internship.pdf",
     years: "May 2023 — July 2023",
     location: "Virtual",
     text: "Played a key role in developing a German language translation model using NLP and Python algorithms, leading a team to deliver the project on time and demonstrating strong leadership and technical skills."
@@ -374,7 +374,7 @@ const internshipsData = [
   {
     title: "Cybersecurity Virtual Internship",
     company: "Paloalto Networks, Eduskills",
-    link: "https://www.seldomtechnologies.com/",
+    certificateLink: "./assets/documents/internships/paloalto-internship.pdf",
     years: "May 2023 — July 2023",
     location: "Virtual",
     text: ""
@@ -382,12 +382,27 @@ const internshipsData = [
   {
     title: "Salesforce Developer Virtual Internship",
     company: "Salesforce",
-    link: "https://www.seldomtechnologies.com/",
+    certificateLink: "./assets/documents/internships/salesforce-internship.pdf",
     years: "April 2023 — May 2023",
     location: "Virtual",
     text: ""
   }
 ];
+
+// Helper function to populate education templates
+function populateEducationTemplate(dataArray, listContainer, templateElem) {
+  if (!listContainer || !templateElem || typeof dataArray === 'undefined') return;
+  
+  dataArray.forEach(item => {
+    const clone = templateElem.content.cloneNode(true);
+    clone.querySelector(".timeline-item-title").textContent = item.title;
+    clone.querySelector(".years").textContent = item.years;
+    clone.querySelector(".cgpa").textContent = item.cgpa;
+    clone.querySelector(".degree").textContent = item.degree;
+    clone.querySelector(".timeline-text").textContent = item.text;
+    listContainer.appendChild(clone);
+  });
+}
 
 // Helper function to populate experience/internship templates
 function populateExperienceTemplate(dataArray, listContainer, templateElem) {
@@ -407,26 +422,43 @@ function populateExperienceTemplate(dataArray, listContainer, templateElem) {
   });
 }
 
+// Helper function to populate internship templates
+function populateInternshipsTemplate(dataArray, listContainer, templateElem) {
+  if (!listContainer || !templateElem || typeof dataArray === 'undefined') return;
+  
+  dataArray.forEach(item => {
+    const clone = templateElem.content.cloneNode(true);
+    
+    clone.querySelector(".internship-title-text").textContent = item.title;
+    
+    // Handle the certificate link
+    const certLink = clone.querySelector(".certificate-link");
+    if (item.certificateLink) {
+      certLink.setAttribute("href", item.certificateLink);
+    } else {
+      certLink.style.display = 'none'; // Hide if no link provided
+    }
+    
+    clone.querySelector(".company-name").textContent = item.company;
+    clone.querySelector(".years").textContent = item.years;
+    clone.querySelector(".location").textContent = item.location;
+    clone.querySelector(".timeline-text").textContent = item.text;
+    
+    listContainer.appendChild(clone);
+  });
+}
+
 // 1. Render Education
 const educationList = document.getElementById("education-list");
 const educationTemplate = document.getElementById("education-item-template");
-if (educationList && educationTemplate && typeof educationData !== 'undefined') {
-  educationData.forEach(item => {
-    const clone = educationTemplate.content.cloneNode(true);
-    clone.querySelector(".timeline-item-title").textContent = item.title;
-    clone.querySelector(".years").textContent = item.years;
-    clone.querySelector(".cgpa").textContent = item.cgpa;
-    clone.querySelector(".degree").textContent = item.degree;
-    clone.querySelector(".timeline-text").textContent = item.text;
-    educationList.appendChild(clone);
-  });
-}
+populateEducationTemplate(educationData, educationList, educationTemplate);
 
 // 2. Render Experience
 const experienceList = document.getElementById("experience-list");
 const experienceTemplate = document.getElementById("experience-item-template");
 populateExperienceTemplate(experienceData, experienceList, experienceTemplate);
 
-// 3. Render Internships (Reusing the Experience template because structure matches)
+// 3. Render Internships using custom template
 const internshipsList = document.getElementById("internships-list");
-populateExperienceTemplate(internshipsData, internshipsList, experienceTemplate);
+const internshipsTemplate = document.getElementById("internships-item-template");
+populateInternshipsTemplate(internshipsData, internshipsList, internshipsTemplate);
