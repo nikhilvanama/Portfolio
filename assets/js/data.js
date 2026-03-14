@@ -18,7 +18,7 @@ const sidebarData = {
  * Content for the "About me" section.
  */
 const aboutData = [
-  "I’m Nikhil Vanama, a Software Engineer focused on building modern web applications and intuitive digital experiences. I enjoy turning complex ideas into simple, scalable, and user-friendly solutions. My work includes web design, frontend engineering, and WordPress development, creating responsive and visually engaging products across industries like healthcare, government services, logistics, and business platforms.",
+  "I’m Nikhil Vanama, a Software Engineer focused on building modern web applications and intuitive digital experiences. I enjoy turning complex ideas into simple, scalable, and user-friendly solutions. My work includes web design, frontend engineering, and WordPress development, creating responsive and visually engaging products across industries like healthcare, government services, logistics, iGaming, and business platforms.",
   "Beyond web development, I’m highly interested in enterprise systems and the future of digital platforms. I’m currently exploring the SAP ecosystem, learning Fiori, ABAP, HANA, BTP, and CAP, with the goal of building intelligent ERP system frontends that combine usability, performance, and strong enterprise-level architecture."
 ];
 
@@ -271,7 +271,7 @@ const skillsData = [
   },
   {
     category: "Development Tools",
-    skills: ["Git", "GitHub", "GitHub Copilot", "VS Code", "Google Antigravity", "Cursor", "Claude", "Chrome DevTools", "Postman", "Jira"]
+    skills: ["Git", "GitHub", "GitHub Copilot", "VS Code", "Google Antigravity", "Cursor", "Claude", "Chrome DevTools", "Postman", "Jira", "Docker", "Excel"]
   }
 ];
 
