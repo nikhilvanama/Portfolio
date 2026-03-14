@@ -26,6 +26,7 @@ The portfolio is built with a custom-designed single-page architecture that prio
 
 ### 🏗️ Architecture
 - **Navigation Logic:** A custom `data-nav-link` system handles switching between different "pages" (articles) without reloading the browser.
+- **Data-Driven UI:** Sections like "What I'm doing" (Services) are purely data-driven. The structural HTML uses `<template>` tags, while the content is securely stored in and populated by `assets/js/data.js`. This prevents HTML duplication and makes updating content as simple as editing a JavaScript array.
 - **Theme & Styling:** CSS variables are used for consistent dark-theme coloring, glassmorphism effects, and responsive layout calculations.
 - **Animations:**
   - **AOS (Animate On Scroll):** Managed via `AOS.init()` to reveal sections elegantly as the user scrolls.
@@ -61,14 +62,13 @@ If you'd like to use this portfolio as a template or study its architecture, you
 
 ## 📂 Project Structure
 
-```text
 Portfolio/
 ├── assets/
 │   ├── css/         # Custom stylesheets
-│   ├── js/          # Main application logic
+│   ├── js/          # Main application logic & separate data (data.js)
 │   ├── images/      # UI icons, avatars, and project previews
 │   └── screenshots/ # README documentation screenshots
-├── index.html       # Main entry point
+├── index.html       # Main entry point (incorporates HTML templates)
 └── README.md        # Project documentation
 ```
 

@@ -174,63 +174,21 @@
         <section class="service">
           <h3 class="h3 service-title">What i'm doing</h3>
 
-          <ul class="service-list" data-aos="fade-up">
-            <li class="service-item">
-              <div class="service-icon-box">
-                <img src="./assets/images/icon-SAP.svg" alt="SAP icon" width="40">
-              </div>
-
-              <div class="service-content-box">
-                <h4 class="h4 service-item-title">Enterprise & SAP Learning</h4>
-                <p class="service-item-text">
-                  Exploring SAP ecosystem including Fiori, ABAP, HANA, BTP, CAP, building modern ERP interfaces and
-                  enterprise solutions.
-                </p>
-              </div>
-            </li>
-
-            <li class="service-item">
-              <div class="service-icon-box">
-                <img src="./assets/images/icon-design.svg" alt="design icon" width="40">
-              </div>
-
-              <div class="service-content-box">
-                <h4 class="h4 service-item-title">UI / Web Design</h4>
-                <p class="service-item-text">
-                  Designing clean, modern interfaces focused on usability, accessibility, and engaging user experiences
-                  across digital platforms.
-                </p>
-              </div>
-            </li>
-
-            <li class="service-item">
-              <div class="service-icon-box">
-                <img src="./assets/images/icon-dev.svg" alt="Web development icon" width="40">
-              </div>
-
-              <div class="service-content-box">
-                <h4 class="h4 service-item-title">Web Development</h4>
-                <p class="service-item-text">
-                  Building responsive, scalable websites/Applications using modern JavaScript frameworks, ensuring
-                  performance, maintainability, user interaction.
-                </p>
-              </div>
-            </li>
-
-            <li class="service-item">
-              <div class="service-icon-box">
-                <img src="./assets/images/icon-wordpress.svg" alt="Wordpress icon" width="40">
-              </div>
-
-              <div class="service-content-box">
-                <h4 class="h4 service-item-title">Wordpress Solutions</h4>
-                <p class="service-item-text">
-                  Building custom WordPress websites with modern design, performance optimization, and seamless
-                  integration with other platforms.
-                </p>
-              </div>
-            </li>
+          <ul class="service-list" id="service-list" data-aos="fade-up">
+            <!-- Services will be populated dynamically by script.js using the template below -->
           </ul>
+
+          <template id="service-template">
+            <li class="service-item">
+              <div class="service-icon-box">
+                <img class="service-icon" src="" alt="" width="40">
+              </div>
+              <div class="service-content-box">
+                <h4 class="h4 service-item-title"></h4>
+                <p class="service-item-text"></p>
+              </div>
+            </li>
+          </template>
         </section>
 
         <!-- Habits -->
@@ -332,7 +290,7 @@
               </div>
               <div class="achievement-content">
                 <h4 class="achievement-number">8+</h4>
-                <p class="achievement-text">Industries Worked</p>
+                <p class="achievement-text">Industries Worked Projects</p>
               </div>
             </li>
 
@@ -1139,12 +1097,6 @@
         </section>
       </article>
 
-      <!--- #BLOG (Commented Out)
-      <article class="blog" data-page="blog" data-aos="fade-up">
-        ... (previous content) ...
-      </article>
-      -->
-
       <!--- #CONTACT-->
 
       <article class="contact" data-page="contact" data-aos="fade-up">
@@ -1155,7 +1107,7 @@
         <section class="mapbox" data-mapbox>
           <figure>
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d199666.5651251294!2d-121.58334177520186!3d38.56165006739519!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x809ac672b28397f9%3A0x921f6aaa74197fdb!2sSacramento%2C%20CA%2C%20USA!5e0!3m2!1sen!2sbd!4v1647608789441!5m2!1sen!2sbd"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d478.05110393048164!2d80.56773629463416!3d16.431800574024226!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a35f1384e2ccc41%3A0xedb08ef558b9912f!2sMangalagiri%2C%20Andhra%20Pradesh!5e1!3m2!1sen!2sin!4v1773378721321!5m2!1sen!2sin"
               width="400" height="300" loading="lazy"></iframe>
           </figure>
         </section>
@@ -1181,6 +1133,7 @@
   </main>
 
   <!--- custom js link-->
+  <script src="./assets/js/data.js"></script>
   <script src="./assets/js/script.js"></script>
 
   <!--- ionicon link-->
