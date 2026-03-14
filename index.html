@@ -201,37 +201,21 @@
         <section class="achievements" data-aos="fade-up">
           <h3 class="h3 service-title">Achievements</h3>
 
-          <ul class="achievements-list">
-            <li class="achievement-item">
-              <div class="achievement-icon">
-                <ion-icon name="globe-outline"></ion-icon>
-              </div>
-              <div class="achievement-content">
-                <h4 class="achievement-number">15+</h4>
-                <p class="achievement-text">Websites Delivered</p>
-              </div>
-            </li>
-
-            <li class="achievement-item">
-              <div class="achievement-icon">
-                <ion-icon name="business-outline"></ion-icon>
-              </div>
-              <div class="achievement-content">
-                <h4 class="achievement-number">8+</h4>
-                <p class="achievement-text">Industries Worked Projects</p>
-              </div>
-            </li>
-
-            <li class="achievement-item">
-              <div class="achievement-icon">
-                <ion-icon name="sparkles-outline"></ion-icon>
-              </div>
-              <div class="achievement-content">
-                <h4 class="achievement-number">2.5+</h4>
-                <p class="achievement-text">Years of Experience</p>
-              </div>
-            </li>
+          <ul class="achievements-list" id="achievements-list">
+            <!-- Achievements will be populated dynamically by data.js using the template below -->
           </ul>
+
+          <template id="achievement-template">
+            <li class="achievement-item">
+              <div class="achievement-icon">
+                <ion-icon name="" class="achievement-icon-elem"></ion-icon>
+              </div>
+              <div class="achievement-content">
+                <h4 class="achievement-number"></h4>
+                <p class="achievement-text"></p>
+              </div>
+            </li>
+          </template>
         </section>
 
         <!-- Philosophy & Innovation -->

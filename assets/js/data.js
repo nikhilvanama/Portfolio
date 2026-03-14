@@ -169,3 +169,36 @@ if (habitsListContainer && habitTemplate && typeof habitsData !== 'undefined') {
     habitsListContainer.appendChild(templateClone);
   });
 }
+
+/**
+ * Achievements Data
+ * Content for the "Achievements" section.
+ */
+const achievementsData = [
+  { icon: "globe-outline", number: "15+", text: "Websites Delivered" },
+  { icon: "business-outline", number: "8+", text: "Industries Worked Projects" },
+  { icon: "sparkles-outline", number: "2.5+", text: "Years of Experience" }
+];
+
+const achievementsListContainer = document.getElementById("achievements-list");
+const achievementTemplate = document.getElementById("achievement-template");
+
+if (achievementsListContainer && achievementTemplate && typeof achievementsData !== 'undefined') {
+  achievementsData.forEach(achievement => {
+    // Clone the template content
+    const templateClone = achievementTemplate.content.cloneNode(true);
+    
+    // Select elements within the clone
+    const iconElem = templateClone.querySelector(".achievement-icon-elem");
+    const numberH4 = templateClone.querySelector(".achievement-number");
+    const textP = templateClone.querySelector(".achievement-text");
+
+    // Populate data
+    iconElem.setAttribute("name", achievement.icon);
+    numberH4.textContent = achievement.number;
+    textP.textContent = achievement.text;
+
+    // Append the assembled clone to the list
+    achievementsListContainer.appendChild(templateClone);
+  });
+}
