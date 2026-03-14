@@ -129,3 +129,43 @@ if (serviceListContainer && serviceTemplate && typeof servicesData !== 'undefine
     serviceListContainer.appendChild(templateClone);
   });
 }
+
+/**
+ * Habits Data
+ * Content for the "Habits" section.
+ */
+const habitsData = [
+  { icon: "code-slash-outline", text: "Coding" },
+  { icon: "book-outline", text: "Reading Book" },
+  { icon: "brush-outline", text: "Figma Designs" },
+  { icon: "fitness-outline", text: "Workout" },
+  { icon: "walk-outline", text: "Running" },
+  { icon: "trophy-outline", text: "Badminton" },
+  { icon: "baseball-outline", text: "Cricket" },
+  { icon: "game-controller-outline", text: "Gaming" },
+  { icon: "airplane-outline", text: "Travel" },
+  { icon: "musical-notes-outline", text: "Music" },
+  { icon: "pencil-outline", text: "Doodling" },
+  { icon: "videocam-outline", text: "Video Editing" }
+];
+
+const habitsListContainer = document.getElementById("habits-list");
+const habitTemplate = document.getElementById("habit-template");
+
+if (habitsListContainer && habitTemplate && typeof habitsData !== 'undefined') {
+  habitsData.forEach(habit => {
+    // Clone the template content
+    const templateClone = habitTemplate.content.cloneNode(true);
+    
+    // Select elements within the clone
+    const iconElem = templateClone.querySelector(".habit-icon-elem");
+    const textP = templateClone.querySelector(".habit-text");
+
+    // Populate data
+    iconElem.setAttribute("name", habit.icon);
+    textP.textContent = habit.text;
+
+    // Append the assembled clone to the list
+    habitsListContainer.appendChild(templateClone);
+  });
+}
