@@ -301,6 +301,72 @@ if (skillsListContainer && skillCategoryTemplate && typeof skillsData !== 'undef
 }
 
 /**
+ * Certifications Data
+ */
+const certificationsData = [
+  {
+    title: "Java Fullstack Certificate",
+    provider: "Wipro",
+    link: "./assets/documents/certificates/wipro-certificate.pdf"
+  },
+  {
+    title: "Devops for Web Development",
+    provider: "DevTown",
+    link: "./assets/documents/certificates/devton-certificate.pdf"
+  },
+  {
+    title: "DBMS Certificate",
+    provider: "Infosys",
+    link: "./assets/documents/certificates/infosys-dbms-certificate.pdf"
+  },
+  {
+    title: "AWS Cloud Foundations",
+    provider: "AWS",
+    link: "./assets/documents/certificates/aws-certificate.pdf"
+  },
+  {
+    title: "Cloud Computing Course",
+    provider: "NPTEL",
+    link: "./assets/documents/certificates/NPTEL-certficate.pdf"
+  },
+  {
+    title: "Fundamentals of Cloud Security",
+    provider: "Palo Alto Networks",
+    link: "./assets/documents/certificates/paloalto-certificate.pdf"
+  },
+  {
+    title: "Learn C Certificate",
+    provider: "CodeChef",
+    link: "./assets/documents/certificates/codechef-C-certificate.pdf"
+  },
+  {
+    title: "Intro to CyberSecurity",
+    provider: "Infosys",
+    link: "./assets/documents/certificates/infosys-certificate.pdf"
+  }
+];
+
+const certificationsList = document.getElementById("certifications-list");
+const certificationTemplate = document.getElementById("certification-item-template");
+
+if (certificationsList && certificationTemplate && typeof certificationsData !== 'undefined') {
+  certificationsData.forEach(cert => {
+    const clone = certificationTemplate.content.cloneNode(true);
+    clone.querySelector(".cert-title").textContent = cert.title;
+    clone.querySelector(".cert-provider").textContent = cert.provider;
+    
+    const certLink = clone.querySelector(".cert-link");
+    if (cert.link === "#" || !cert.link) {
+      certLink.style.display = 'none'; // Hide arrow if no real link
+    } else {
+      certLink.href = cert.link;
+    }
+    
+    certificationsList.appendChild(clone);
+  });
+}
+
+/**
  * Timeline Data (Education, Experience, Internships)
  */
 const educationData = [

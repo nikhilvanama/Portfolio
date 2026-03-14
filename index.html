@@ -427,37 +427,21 @@
         <section class="certifications" data-aos="fade-up">
           <h3 class="h3 service-title" data-aos="fade-up">Certifications</h3>
 
-          <ul class="cert-list">
-            <li class="cert-item">
-              <div class="cert-content">
-                <h4 class="h4 cert-title">Meta Frontend Developer Professional Certificate</h4>
-                <p class="cert-provider">Coursera | Meta</p>
-              </div>
-              <a href="#" class="cert-link">
-                <ion-icon name="arrow-forward-outline"></ion-icon>
-              </a>
-            </li>
-
-            <li class="cert-item">
-              <div class="cert-content">
-                <h4 class="h4 cert-title">Google UX Design Professional Certificate</h4>
-                <p class="cert-provider">Coursera | Google</p>
-              </div>
-              <a href="#" class="cert-link">
-                <ion-icon name="arrow-forward-outline"></ion-icon>
-              </a>
-            </li>
-
-            <li class="cert-item">
-              <div class="cert-content">
-                <h4 class="h4 cert-title">Responsive Web Design Certification</h4>
-                <p class="cert-provider">freeCodeCamp</p>
-              </div>
-              <a href="#" class="cert-link">
-                <ion-icon name="arrow-forward-outline"></ion-icon>
-              </a>
-            </li>
+          <ul class="cert-list" id="certifications-list">
+            <!-- Certifications will be populated dynamically -->
           </ul>
+
+          <template id="certification-item-template">
+            <li class="cert-item">
+              <div class="cert-content">
+                <h4 class="h4 cert-title"></h4>
+                <p class="cert-provider"></p>
+              </div>
+              <a href="" target="_blank" class="cert-link">
+                <ion-icon name="arrow-forward-outline"></ion-icon>
+              </a>
+            </li>
+          </template>
         </section>
 
       </article>
