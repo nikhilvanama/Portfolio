@@ -223,21 +223,17 @@
           <h3 class="h3 service-title">Innovation & Philosophy</h3>
 
           <div class="philosophy-content">
-            <div class="philosophy-text" data-aos="fade-right">
-              <h4 class="h4">Brain-Centric "Vibe Coding"</h4>
-              <p>
-                In the era of AI, I embrace <strong>vibe coding</strong>—a philosophy where I use my brain for
-                high-level structuring, planning, and recursive algorithmic logic. I act as the architect, explaining
-                the "vibe" and complex system requirements to intelligent agents that assist in rapid execution.
-              </p>
-              <br>
-              <h4 class="h4">My SAP Journey</h4>
-              <p>
-                My exploration into the <strong>SAP Ecosystem</strong> is driven by a passion for enterprise-level
-                harmony. From mastering Fiori and ABAP to diving deep into BTP and HANA, I am building the future of
-                intelligent ERP frontends that combine robust architecture with modern usability.
-              </p>
+            <div class="philosophy-text" data-aos="fade-right" id="philosophy-text-container">
+              <!-- Philosophy text will be populated dynamically by data.js using the template below -->
             </div>
+
+            <template id="philosophy-template">
+              <div class="philosophy-item">
+                <h4 class="h4 philosophy-item-title"></h4>
+                <p class="philosophy-item-text"></p>
+                <br>
+              </div>
+            </template>
 
             <div class="philosophy-image-container" data-aos="fade-left">
               <div class="philosophy-image-interactive">

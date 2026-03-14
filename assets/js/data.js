@@ -202,3 +202,40 @@ if (achievementsListContainer && achievementTemplate && typeof achievementsData 
     achievementsListContainer.appendChild(templateClone);
   });
 }
+
+/**
+ * Philosophy Data
+ * Content for the "Innovation & Philosophy" section textual part.
+ */
+const philosophyData = [
+  {
+    title: "Brain-Centric \"Vibe Coding\"",
+    text: "In the era of AI, I embrace vibe coding—a philosophy where I use my brain for high-level structuring, planning, and recursive algorithmic logic. I act as the architect, explaining the \"vibe\" and complex system requirements to intelligent agents that assist in rapid execution."
+  },
+  {
+    title: "My SAP Journey",
+    text: "My exploration into the SAP Ecosystem is driven by a passion for enterprise-level harmony. From mastering Fiori and ABAP to diving deep into BTP and HANA, I am building the future of intelligent ERP frontends that combine robust architecture with modern usability."
+  }
+];
+
+const philosophyTextContainer = document.getElementById("philosophy-text-container");
+const philosophyTemplate = document.getElementById("philosophy-template");
+
+if (philosophyTextContainer && philosophyTemplate && typeof philosophyData !== 'undefined') {
+  philosophyData.forEach(item => {
+    // Clone the template content
+    const templateClone = philosophyTemplate.content.cloneNode(true);
+    
+    // Select elements within the clone
+    const titleH4 = templateClone.querySelector(".philosophy-item-title");
+    const textP = templateClone.querySelector(".philosophy-item-text");
+
+    // Populate data
+    titleH4.textContent = item.title;
+    // We use innerHTML here in case the user wants to add <strong> tags around words like "vibe coding" or "SAP Ecosystem" later.
+    textP.innerHTML = item.text.replace('vibe coding', '<strong>vibe coding</strong>').replace('SAP Ecosystem', '<strong>SAP Ecosystem</strong>');
+
+    // Append the assembled clone to the container
+    philosophyTextContainer.appendChild(templateClone);
+  });
+}
