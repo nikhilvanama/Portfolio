@@ -27,7 +27,7 @@ const projectModalCloseBtn = projectModalContainer.querySelector("[data-modal-cl
 const projectOverlay = projectModalContainer.querySelector("[data-overlay]");
 
 // Project modal content elements
-const projModalImg = projectModalContainer.querySelector("[data-modal-img]");
+const projModalCarousel = projectModalContainer.querySelector("[data-modal-carousel]");
 const projModalTitle = projectModalContainer.querySelector("[data-modal-title]");
 const projModalType = projectModalContainer.querySelector("[data-modal-type]");
 const projModalCategory = projectModalContainer.querySelector("[data-modal-category]");
@@ -36,11 +36,14 @@ const projModalTech = projectModalContainer.querySelector("[data-modal-tech]");
 const projModalDesc = projectModalContainer.querySelector("[data-modal-description]");
 const projModalLive = projectModalContainer.querySelector("[data-modal-live]");
 const projModalGithub = projectModalContainer.querySelector("[data-modal-github]");
+const projModalPrevBtn = projectModalContainer.querySelector("[data-carousel-prev]");
+const projModalNextBtn = projectModalContainer.querySelector("[data-carousel-next]");
 
 // Project modal toggle function
 const projectModalFunc = function () {
   projectModalContainer.classList.toggle("active");
   projectOverlay.classList.toggle("active");
+  document.body.classList.toggle("no-scroll");
 }
 
 // modal toggle function
@@ -69,17 +72,44 @@ for (let i = 0; i < testimonialsItem.length; i++) {
 // modalCloseBtn.addEventListener("click", testimonialsModalFunc);
 // overlay.addEventListener("click", testimonialsModalFunc);
 
+// Carousel Navigation Logic and State Management
+const updateCarouselArrows = function () {
+  if (!projModalCarousel || !projModalPrevBtn || !projModalNextBtn) return;
+  
+  const scrollLeft = projModalCarousel.scrollLeft;
+  const maxScroll = projModalCarousel.scrollWidth - projModalCarousel.clientWidth;
+  
+  // Use a small threshold for floating point inaccuracies
+  projModalPrevBtn.disabled = scrollLeft <= 1;
+  projModalNextBtn.disabled = scrollLeft >= maxScroll - 1;
+};
+
+if (projModalPrevBtn && projModalNextBtn && projModalCarousel) {
+  projModalPrevBtn.addEventListener("click", () => {
+    projModalCarousel.scrollBy({ left: -300, behavior: 'smooth' });
+  });
+  
+  projModalNextBtn.addEventListener("click", () => {
+    projModalCarousel.scrollBy({ left: 300, behavior: 'smooth' });
+  });
+
+  projModalCarousel.addEventListener("scroll", updateCarouselArrows);
+  
+  // Also check on window resize
+  window.addEventListener("resize", updateCarouselArrows);
+}
+
 // Project Modal Open Logic
 document.addEventListener("click", function(e) {
   const eyeBtn = e.target.closest("[data-project-eye]");
   if (eyeBtn) {
     const projectItem = eyeBtn.closest("[data-project-index]");
+    if (!projectItem) return;
+    
     const index = projectItem.dataset.projectIndex;
     const project = window.portfolioProjects[index];
 
     if (project) {
-      projModalImg.src = project.image;
-      projModalImg.alt = project.title;
       projModalTitle.textContent = project.title;
       projModalType.textContent = project.type;
       projModalCategory.textContent = project.projectCategory;
@@ -95,19 +125,40 @@ document.addEventListener("click", function(e) {
         projModalTech.appendChild(span);
       });
 
+      // Populate Carousel
+      projModalCarousel.innerHTML = "";
+      if (project.images && project.images.length > 0) {
+        project.images.forEach(imgSrc => {
+          const div = document.createElement("div");
+          div.className = "carousel-item";
+          div.innerHTML = `<img src="${imgSrc}" alt="${project.title} screenshot">`;
+          projModalCarousel.appendChild(div);
+        });
+      } else {
+        const div = document.createElement("div");
+        div.className = "carousel-item";
+        div.innerHTML = `<img src="${project.thumbnail}" alt="${project.title}">`;
+        projModalCarousel.appendChild(div);
+      }
+
+      // Reset carousel scroll and update arrows
+      projModalCarousel.scrollLeft = 0;
+      // Use setTimeout to ensure DOM is rendered before checking scroll widths
+      setTimeout(updateCarouselArrows, 100);
+
       // Populate Links
       if (project.liveLink && project.liveLink !== "#") {
         projModalLive.href = project.liveLink;
-        projModalLive.style.display = "flex";
+        projModalLive.parentNode.style.display = "flex";
       } else {
-        projModalLive.style.display = "none";
+        projModalLive.parentNode.style.display = "none";
       }
 
       if (project.githubLink && project.githubLink !== "#") {
         projModalGithub.href = project.githubLink;
-        projModalGithub.style.display = "flex";
+        projModalGithub.parentNode.style.display = "flex";
       } else {
-        projModalGithub.style.display = "none";
+        projModalGithub.parentNode.style.display = "none";
       }
 
       projectModalFunc();

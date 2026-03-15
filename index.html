@@ -753,50 +753,58 @@
       </button>
 
       <div class="modal-content-wrapper">
-        <div class="modal-image-slider">
-          <img src="" alt="Project Image" data-modal-img>
+        <div class="modal-header">
+          <h4 class="h3 modal-title" data-modal-title></h4>
+          <div class="modal-actions-top">
+            <a href="#" target="_blank" class="action-btn" data-modal-live title="Live Link">
+              <ion-icon name="globe-outline"></ion-icon>
+            </a>
+            <a href="#" target="_blank" class="action-btn" data-modal-github title="GitHub">
+              <ion-icon name="logo-github"></ion-icon>
+            </a>
+          </div>
         </div>
 
-        <div class="modal-info">
-          <h4 class="h3 modal-title" data-modal-title></h4>
-          
-          <div class="modal-meta-grid">
-            <div class="meta-item">
-              <span class="meta-label">Type</span>
-              <span class="meta-value" data-modal-type></span>
-            </div>
-            <div class="meta-item">
-              <span class="meta-label">Category</span>
-              <span class="meta-value" data-modal-category></span>
-            </div>
-            <div class="meta-item">
-              <span class="meta-label">Role</span>
-              <span class="meta-value" data-modal-role></span>
-            </div>
+        <div class="modal-meta-grid">
+          <div class="meta-item">
+            <span class="meta-label">Type</span>
+            <span class="meta-value" data-modal-type></span>
           </div>
+          <div class="meta-item">
+            <span class="meta-label">Category</span>
+            <span class="meta-value" data-modal-category></span>
+          </div>
+          <div class="meta-item">
+            <span class="meta-label">Role</span>
+            <span class="meta-value" data-modal-role></span>
+          </div>
+        </div>
 
-          <div class="modal-tech-stack">
-            <h5 class="h5">Tech Stack</h5>
-            <div class="tech-badges" data-modal-tech>
-              <!-- Badges populated dynamically -->
+        <div class="modal-tech-stack">
+          <h5 class="h5">Tech Stack</h5>
+          <div class="tech-badges" data-modal-tech>
+            <!-- Badges populated dynamically -->
+          </div>
+        </div>
+
+        <div class="modal-carousel-wrapper">
+          <h5 class="h5">Project Gallery</h5>
+          <div class="carousel-controls">
+            <button class="carousel-btn prev" data-carousel-prev>
+              <ion-icon name="chevron-back-outline"></ion-icon>
+            </button>
+            <div class="modal-carousel has-scrollbar" data-modal-carousel>
+              <!-- Carousel images populated dynamically -->
             </div>
+            <button class="carousel-btn next" data-carousel-next>
+              <ion-icon name="chevron-forward-outline"></ion-icon>
+            </button>
           </div>
+        </div>
 
-          <div class="modal-description">
-            <h5 class="h5">About Project</h5>
-            <p data-modal-description></p>
-          </div>
-
-          <div class="modal-actions">
-            <a href="#" target="_blank" class="btn btn-primary" data-modal-live>
-              <ion-icon name="globe-outline"></ion-icon>
-              <span>Live Link</span>
-            </a>
-            <a href="#" target="_blank" class="btn btn-secondary" data-modal-github>
-              <ion-icon name="logo-github"></ion-icon>
-              <span>GitHub</span>
-            </a>
-          </div>
+        <div class="modal-description">
+          <h5 class="h5">About Project</h5>
+          <p data-modal-description></p>
         </div>
       </div>
     </section>

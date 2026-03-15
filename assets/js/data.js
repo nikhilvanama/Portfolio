@@ -539,8 +539,8 @@ const projectsData = [
     displayCategory: "Web Development",
     type: "Financial Dashboard",
     projectCategory: "Personal Project",
-    image: "./assets/images/project-1.jpg",
-    images: ["./assets/images/project-1.jpg"],
+    thumbnail: "./assets/images/project-1.jpg",
+    images: ["./assets/images/project-1.jpg", "./assets/images/project-2.png", "./assets/images/project-3.jpg"],
     techStack: ["HTML5", "CSS3", "JavaScript", "Chart.js"],
     description: "A comprehensive financial dashboard that allows users to track their spending, visualize budget allocations, and manage multiple accounts in real-time.",
     role: "Lead Developer",
@@ -553,8 +553,8 @@ const projectsData = [
     displayCategory: "Web Design",
     type: "UI Kit / Design System",
     projectCategory: "Personal Project",
-    image: "./assets/images/project-2.png",
-    images: ["./assets/images/project-2.png"],
+    thumbnail: "./assets/images/project-2.png",
+    images: ["./assets/images/project-2.png", "./assets/images/project-4.png", "./assets/images/project-5.png"],
     techStack: ["Figma", "Design Systems", "UI Principles"],
     description: "A modern UI Kit designed for SaaS platforms, focusing on accessibility, clean typography, and a consistent modular grid system.",
     role: "UI Designer",
@@ -567,8 +567,8 @@ const projectsData = [
     displayCategory: "Web Design",
     type: "Crypto Wallet Design",
     projectCategory: "Freelance",
-    image: "./assets/images/project-3.jpg",
-    images: ["./assets/images/project-3.jpg"],
+    thumbnail: "./assets/images/project-3.jpg",
+    images: ["./assets/images/project-3.jpg", "./assets/images/project-1.jpg"],
     techStack: ["Figma", "User Research", "Prototyping"],
     description: "A secure and intuitive cryptocurrency wallet design that simplifies the process of sending, receiving, and managing digital assets.",
     role: "UX Researcher & Designer",
@@ -581,8 +581,8 @@ const projectsData = [
     displayCategory: "Applications",
     type: "Data Visualizer",
     projectCategory: "Personal Project",
-    image: "./assets/images/project-4.png",
-    images: ["./assets/images/project-4.png"],
+    thumbnail: "./assets/images/project-4.png",
+    images: ["./assets/images/project-4.png", "./assets/images/project-3.jpg"],
     techStack: ["React.js", "Node.js", "REST API"],
     description: "An application that fetches and visualizes player statistics from the Brawlhalla API, providing deep insights into win rates and legend mastery.",
     role: "Fullstack Developer",
@@ -595,8 +595,8 @@ const projectsData = [
     displayCategory: "Web Design",
     type: "Digital Service Manager",
     projectCategory: "Company Project",
-    image: "./assets/images/project-5.png",
-    images: ["./assets/images/project-5.png"],
+    thumbnail: "./assets/images/project-5.png",
+    images: ["./assets/images/project-5.png", "./assets/images/project-2.png"],
     techStack: ["Figma", "Wireframing", "Enterprise UI"],
     description: "An enterprise-level management platform designed to streamline digital service workflows and improve team collaboration across departments.",
     role: "UI/UX Designer",
@@ -609,8 +609,8 @@ const projectsData = [
     displayCategory: "SAP",
     type: "Enterprise UI",
     projectCategory: "Learning Project",
-    image: "./assets/images/project-2.png", // Reusing image for sample
-    images: ["./assets/images/project-2.png"],
+    thumbnail: "./assets/images/project-2.png", // Reusing image for sample
+    images: ["./assets/images/project-2.png", "./assets/images/project-6.png"],
     techStack: ["SAP Fiori", "OData", "SAPUI5", "BTP"],
     description: "A custom SAP Fiori analytical dashboard designed to provide real-time business insights for supply chain management using SAP BTP.",
     role: "SAP Developer",
@@ -636,7 +636,7 @@ function populateProjects() {
     projectItem.setAttribute("data-category", project.category.toLowerCase());
     projectItem.setAttribute("data-project-index", index);
     
-    clone.querySelector(".project-img img").src = project.image;
+    clone.querySelector(".project-img img").src = project.thumbnail;
     clone.querySelector(".project-img img").alt = project.title;
     clone.querySelector(".project-title").textContent = project.title;
     clone.querySelector(".project-category").textContent = project.displayCategory;
