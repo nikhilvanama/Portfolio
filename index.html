@@ -61,7 +61,8 @@
             </div>
             <div class="contact-info">
               <p class="contact-title">Email</p>
-              <a href="mailto:vanamanikhil15@gmail.com" class="contact-link" data-sidebar-email>vanamanikhil15@gmail.com</a>
+              <a href="mailto:vanamanikhil15@gmail.com" class="contact-link"
+                data-sidebar-email>vanamanikhil15@gmail.com</a>
             </div>
           </li>
 
@@ -195,8 +196,8 @@
               <p class="habit-text"></p>
             </li>
           </template>
-        </section> 
-        
+        </section>
+
         <!-- Achievements -->
         <section class="achievements" data-aos="fade-up">
           <h3 class="h3 service-title">Achievements</h3>
@@ -790,18 +791,17 @@
         <section class="contact-form">
           <h3 class="h3 form-title">Contact Form</h3>
 
-          <form action="https://api.web3forms.com/submit" method="POST" class="form" data-form>
-
-            <!-- Replace with your Access Key -->
-            <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE">
+          <form action="https://formspree.io/f/mgonlzwd" method="POST" class="form" data-form>
 
             <div class="input-wrapper">
               <input type="text" name="fullname" class="form-input" placeholder="Full name" required data-form-input>
-
               <input type="email" name="email" class="form-input" placeholder="Email address" required data-form-input>
+              <input type="number" name="mobilenumber" class="form-input" placeholder="Mobile Number" required
+                data-form-input>
+              <input type="text" name="subject" class="form-input" placeholder="Subject" required data-form-input>
             </div>
             <textarea name="message" class="form-input" placeholder="Your Message" required data-form-input></textarea>
-            <button class="form-btn" type="submit" disabled data-form-btn>
+            <button class="form-btn" type="submit" data-form-btn>
               <ion-icon name="paper-plane"></ion-icon>
               <span>Send Message</span>
             </button>
@@ -810,6 +810,20 @@
       </article>
     </div>
   </main>
+
+  <!-- Toast Notification -->
+  <div class="toast-notification" id="toast-notification">
+    <div class="toast-content">
+      <ion-icon name="checkmark-circle-outline" class="toast-icon" id="toast-icon"></ion-icon>
+      <div class="toast-text">
+        <h4 class="toast-title" id="toast-title">Success!</h4>
+        <p class="toast-message" id="toast-message">Your message has been sent.</p>
+      </div>
+    </div>
+    <button class="toast-close" id="toast-close" aria-label="Close Toast">
+      <ion-icon name="close-outline"></ion-icon>
+    </button>
+  </div>
 
   <!-- Floating Resume Button -->
   <a href="./assets/documents/resume.pdf" target="_blank" class="floating-resume-btn" aria-label="Download Resume">

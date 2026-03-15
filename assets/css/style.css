@@ -2637,12 +2637,10 @@ textarea.form-input::-webkit-resizer {
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(
-    90deg,
-    transparent,
-    rgba(255, 255, 255, 0.4),
-    transparent
-  );
+  background: linear-gradient(90deg,
+      transparent,
+      rgba(255, 255, 255, 0.4),
+      transparent);
   transition: all 0.5s ease;
   animation: shine 3s infinite;
 }
@@ -2654,15 +2652,95 @@ textarea.form-input::-webkit-resizer {
 }
 
 @keyframes float {
-  0% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
-  100% { transform: translateY(0); }
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
 }
 
 @keyframes shine {
-  0% { left: -100%; }
-  20% { left: 100%; }
-  100% { left: 100%; }
+  0% {
+    left: -100%;
+  }
+
+  20% {
+    left: 100%;
+  }
+
+  100% {
+    left: 100%;
+  }
+}
+
+/*-----------------------------------*\
+  #TOAST NOTIFICATION
+\*-----------------------------------*/
+
+.toast-notification {
+  position: fixed;
+  bottom: 30px;
+  right: -400px; /* Hidden by default */
+  background: var(--eerie-black-1);
+  border: 1px solid var(--jet);
+  border-radius: 14px;
+  padding: 20px 25px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  z-index: 2000; /* Above everything */
+  transition: right 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.toast-notification.active {
+  right: 30px;
+}
+
+.toast-content {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.toast-icon {
+  font-size: 32px;
+  color: var(--orange-yellow-crayola);
+}
+
+.toast-icon.error-icon {
+  color: var(--bittersweet-shimmer);
+}
+
+.toast-title {
+  color: var(--white-1);
+  font-size: var(--fs-6);
+  font-weight: var(--fw-600);
+  margin-bottom: 2px;
+}
+
+.toast-message {
+  color: var(--light-gray);
+  font-size: var(--fs-7);
+}
+
+.toast-close {
+  color: var(--light-gray);
+  font-size: 20px;
+  transition: var(--transition-1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.toast-close:hover {
+  color: var(--white-1);
 }
 
 /*-----------------------------------*\
@@ -2671,7 +2749,8 @@ textarea.form-input::-webkit-resizer {
 
 @media (max-width: 580px) {
   .floating-resume-btn {
-    bottom: 60px; /* Rest just above the mobile navigation bar */
+    bottom: 60px;
+    /* Rest just above the mobile navigation bar */
     right: 30px;
     padding: 10px 20px;
   }

@@ -110,6 +110,89 @@ const form = document.querySelector("[data-form]");
 const formInputs = document.querySelectorAll("[data-form-input]");
 const formBtn = document.querySelector("[data-form-btn]");
 
+// toast variables
+const toastNotification = document.getElementById("toast-notification");
+const toastCloseBtn = document.getElementById("toast-close");
+const toastTitle = document.getElementById("toast-title");
+const toastMessage = document.getElementById("toast-message");
+const toastIcon = document.getElementById("toast-icon");
+
+// hide toast function
+const hideToast = () => {
+  if (toastNotification) {
+    toastNotification.classList.remove("active");
+  }
+};
+
+if (toastCloseBtn) {
+  toastCloseBtn.addEventListener("click", hideToast);
+}
+
+// show toast function
+const showToast = (isSuccess) => {
+  if (!toastNotification) return;
+
+  toastTitle.innerText = isSuccess ? "Success!" : "Error!";
+  toastMessage.innerText = isSuccess ? "Your message has been sent successfully." : "Oops! Something went wrong.";
+  
+  if (isSuccess) {
+    toastIcon.name = "checkmark-circle-outline";
+    toastIcon.classList.remove("error-icon");
+    toastIcon.classList.add("success-icon");
+  } else {
+    toastIcon.name = "close-circle-outline";
+    toastIcon.classList.remove("success-icon");
+    toastIcon.classList.add("error-icon");
+  }
+  
+  toastNotification.classList.add("active");
+  
+  // Auto close after 5 seconds
+  setTimeout(hideToast, 5000);
+};
+
+// handle AJAX form submission
+if (form) {
+  form.addEventListener("submit", async function (e) {
+    e.preventDefault(); // Prevent default page redirect
+    
+    // Change button text and disable to prevent double submission
+    const originalBtnText = formBtn.innerHTML;
+    formBtn.innerHTML = "<ion-icon name='hourglass-outline'></ion-icon><span>Sending...</span>";
+    formBtn.setAttribute("disabled", "");
+
+    const formData = new FormData(form);
+    
+    try {
+      const response = await fetch(form.action, {
+        method: form.method,
+        body: formData,
+        headers: {
+            'Accept': 'application/json'
+        }
+      });
+      
+      if (response.ok) {
+        showToast(true);
+        form.reset(); // Clear the form on success
+      } else {
+        showToast(false);
+      }
+    } catch (error) {
+      showToast(false);
+    } finally {
+      // Restore button text
+      formBtn.innerHTML = originalBtnText;
+      // Disable again since the form was likely reset
+      if (!form.checkValidity()) {
+         formBtn.setAttribute("disabled", "");
+      } else {
+         formBtn.removeAttribute("disabled");
+      }
+    }
+  });
+}
+
 // add event to all form input field
 for (let i = 0; i < formInputs.length; i++) {
   formInputs[i].addEventListener("input", function () {
