@@ -2680,13 +2680,46 @@ textarea.form-input::-webkit-resizer {
 }
 
 /*-----------------------------------*\
+  #INPUT GROUP
+\*-----------------------------------*/
+
+.input-group {
+  display: flex;
+  align-items: center;
+  background: var(--eerie-black-1);
+  border: 1px solid var(--jet);
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+.input-group:focus-within {
+  border-color: var(--violet-crayola);
+}
+
+.input-group-text {
+  color: var(--white-2);
+  font-size: var(--fs-6);
+  font-weight: var(--fw-500);
+  padding: 13px 15px;
+  background: var(--onyx);
+  border-right: 1px solid var(--jet);
+}
+
+.input-group .form-input {
+  border: none;
+  border-radius: 0;
+  margin-bottom: 0;
+  flex: 1;
+}
+
+/*-----------------------------------*\
   #TOAST NOTIFICATION
 \*-----------------------------------*/
 
 .toast-notification {
   position: fixed;
-  bottom: 30px;
-  right: -400px; /* Hidden by default */
+  top: -150px; /* Hidden by default at the top */
+  right: 30px; 
   background: var(--eerie-black-1);
   border: 1px solid var(--jet);
   border-radius: 14px;
@@ -2696,11 +2729,15 @@ textarea.form-input::-webkit-resizer {
   gap: 20px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
   z-index: 2000; /* Above everything */
-  transition: right 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .toast-notification.active {
-  right: 30px;
+  top: 30px;
+  opacity: 1;
+  visibility: visible;
 }
 
 .toast-content {
@@ -2711,11 +2748,16 @@ textarea.form-input::-webkit-resizer {
 
 .toast-icon {
   font-size: 32px;
-  color: var(--orange-yellow-crayola);
+}
+
+.toast-icon.success-icon {
+  color: var(--violet-crayola);
+  filter: drop-shadow(0 0 8px rgba(117, 112, 255, 0.6));
 }
 
 .toast-icon.error-icon {
   color: var(--bittersweet-shimmer);
+  filter: drop-shadow(0 0 8px rgba(255, 118, 117, 0.6));
 }
 
 .toast-title {

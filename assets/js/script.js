@@ -128,11 +128,17 @@ if (toastCloseBtn) {
 }
 
 // show toast function
-const showToast = (isSuccess) => {
+// show toast function
+const showToast = (isSuccess, customMessage = null) => {
   if (!toastNotification) return;
 
   toastTitle.innerText = isSuccess ? "Success!" : "Error!";
-  toastMessage.innerText = isSuccess ? "Your message has been sent successfully." : "Oops! Something went wrong.";
+  
+  if (customMessage) {
+    toastMessage.innerText = customMessage;
+  } else {
+    toastMessage.innerText = isSuccess ? "Your message has been sent successfully." : "Oops! Something went wrong.";
+  }
   
   if (isSuccess) {
     toastIcon.name = "checkmark-circle-outline";
@@ -154,6 +160,38 @@ const showToast = (isSuccess) => {
 if (form) {
   form.addEventListener("submit", async function (e) {
     e.preventDefault(); // Prevent default page redirect
+    
+    // Custom Validations
+    const fullname = form.fullname.value.trim();
+    if (fullname.length < 4) {
+      showToast(false, "Please enter a valid Name (min 4 chars).");
+      return;
+    }
+
+    const email = form.email.value.trim();
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      showToast(false, "Please enter a valid email address.");
+      return;
+    }
+
+    const mobilenumber = form.mobilenumber.value.trim();
+    if (!/^\d{10}$/.test(mobilenumber)) {
+      showToast(false, "Mobile number must be exactly 10 digits.");
+      return;
+    }
+
+    const subject = form.subject.value.trim();
+    if (subject.length < 4) {
+      showToast(false, "Please enter a valid Subject (min 4 chars).");
+      return;
+    }
+
+    const message = form.message.value.trim();
+    if (message.length < 10) {
+      showToast(false, "Message must be at least 10 characters long.");
+      return;
+    }
     
     // Change button text to indicate sending
     const originalBtnText = formBtn.innerHTML;
