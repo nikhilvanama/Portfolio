@@ -101,9 +101,9 @@ if (projModalPrevBtn && projModalNextBtn && projModalCarousel) {
 
 // Project Modal Open Logic
 document.addEventListener("click", function(e) {
-  const eyeBtn = e.target.closest("[data-project-eye]");
-  if (eyeBtn) {
-    const projectItem = eyeBtn.closest("[data-project-index]");
+  const openBtn = e.target.closest("[data-project-eye], [data-project-details]");
+  if (openBtn) {
+    const projectItem = openBtn.closest("[data-project-index]");
     if (!projectItem) return;
     
     const index = projectItem.dataset.projectIndex;
