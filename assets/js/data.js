@@ -528,3 +528,129 @@ populateExperienceTemplate(experienceData, experienceList, experienceTemplate);
 const internshipsList = document.getElementById("internships-list");
 const internshipsTemplate = document.getElementById("internships-item-template");
 populateInternshipsTemplate(internshipsData, internshipsList, internshipsTemplate);
+
+/**
+ * Projects Data
+ */
+const projectsData = [
+  {
+    title: "Finance App",
+    category: "web development", // This maps to the filter buttons
+    displayCategory: "Web Development",
+    type: "Financial Dashboard",
+    projectCategory: "Personal Project",
+    image: "./assets/images/project-1.jpg",
+    images: ["./assets/images/project-1.jpg"],
+    techStack: ["HTML5", "CSS3", "JavaScript", "Chart.js"],
+    description: "A comprehensive financial dashboard that allows users to track their spending, visualize budget allocations, and manage multiple accounts in real-time.",
+    role: "Lead Developer",
+    liveLink: "https://vnikhil.vercel.app/",
+    githubLink: "https://github.com/nikhilvanama"
+  },
+  {
+    title: "Orizon UI Kit",
+    category: "web design",
+    displayCategory: "Web Design",
+    type: "UI Kit / Design System",
+    projectCategory: "Personal Project",
+    image: "./assets/images/project-2.png",
+    images: ["./assets/images/project-2.png"],
+    techStack: ["Figma", "Design Systems", "UI Principles"],
+    description: "A modern UI Kit designed for SaaS platforms, focusing on accessibility, clean typography, and a consistent modular grid system.",
+    role: "UI Designer",
+    liveLink: "#",
+    githubLink: "#"
+  },
+  {
+    title: "Fundo Wallet",
+    category: "web design",
+    displayCategory: "Web Design",
+    type: "Crypto Wallet Design",
+    projectCategory: "Freelance",
+    image: "./assets/images/project-3.jpg",
+    images: ["./assets/images/project-3.jpg"],
+    techStack: ["Figma", "User Research", "Prototyping"],
+    description: "A secure and intuitive cryptocurrency wallet design that simplifies the process of sending, receiving, and managing digital assets.",
+    role: "UX Researcher & Designer",
+    liveLink: "#",
+    githubLink: "#"
+  },
+  {
+    title: "Brawlhalla Statistics",
+    category: "applications",
+    displayCategory: "Applications",
+    type: "Data Visualizer",
+    projectCategory: "Personal Project",
+    image: "./assets/images/project-4.png",
+    images: ["./assets/images/project-4.png"],
+    techStack: ["React.js", "Node.js", "REST API"],
+    description: "An application that fetches and visualizes player statistics from the Brawlhalla API, providing deep insights into win rates and legend mastery.",
+    role: "Fullstack Developer",
+    liveLink: "#",
+    githubLink: "#"
+  },
+  {
+    title: "DSM Platform",
+    category: "web design",
+    displayCategory: "Web Design",
+    type: "Digital Service Manager",
+    projectCategory: "Company Project",
+    image: "./assets/images/project-5.png",
+    images: ["./assets/images/project-5.png"],
+    techStack: ["Figma", "Wireframing", "Enterprise UI"],
+    description: "An enterprise-level management platform designed to streamline digital service workflows and improve team collaboration across departments.",
+    role: "UI/UX Designer",
+    liveLink: "#",
+    githubLink: "#"
+  },
+  {
+    title: "SAP Fiori Dashboard",
+    category: "SAP",
+    displayCategory: "SAP",
+    type: "Enterprise UI",
+    projectCategory: "Learning Project",
+    image: "./assets/images/project-2.png", // Reusing image for sample
+    images: ["./assets/images/project-2.png"],
+    techStack: ["SAP Fiori", "OData", "SAPUI5", "BTP"],
+    description: "A custom SAP Fiori analytical dashboard designed to provide real-time business insights for supply chain management using SAP BTP.",
+    role: "SAP Developer",
+    liveLink: "#",
+    githubLink: "#"
+  }
+];
+
+// 4. Render Projects
+const projectListContainer = document.querySelector(".project-list");
+const projectTemplate = document.getElementById("project-item-template");
+
+function populateProjects() {
+  if (!projectListContainer || !projectTemplate || typeof projectsData === 'undefined') return;
+  
+  // Clear existing items (if any static ones are left)
+  projectListContainer.innerHTML = "";
+  
+  projectsData.forEach((project, index) => {
+    const clone = projectTemplate.content.cloneNode(true);
+    
+    const projectItem = clone.querySelector(".project-item");
+    projectItem.setAttribute("data-category", project.category.toLowerCase());
+    projectItem.setAttribute("data-project-index", index);
+    
+    clone.querySelector(".project-img img").src = project.image;
+    clone.querySelector(".project-img img").alt = project.title;
+    clone.querySelector(".project-title").textContent = project.title;
+    clone.querySelector(".project-category").textContent = project.displayCategory;
+    
+    // Add event listener to the eye icon box (or the whole link if preferred)
+    // We'll handle this in script.js for better modularity, but marking it here
+    
+    projectListContainer.appendChild(clone);
+  });
+}
+
+// Global modal data storage for easy access
+window.portfolioProjects = projectsData;
+
+document.addEventListener("DOMContentLoaded", () => {
+  populateProjects();
+});

@@ -16,10 +16,32 @@ const modalContainer = document.querySelector("[data-modal-container]");
 const modalCloseBtn = document.querySelector("[data-modal-close-btn]");
 const overlay = document.querySelector("[data-overlay]");
 
-// modal variable
+// modal variables
 const modalImg = document.querySelector("[data-modal-img]");
 const modalTitle = document.querySelector("[data-modal-title]");
 const modalText = document.querySelector("[data-modal-text]");
+
+// Project modal variables
+const projectModalContainer = document.querySelector(".project-modal");
+const projectModalCloseBtn = projectModalContainer.querySelector("[data-modal-close-btn]");
+const projectOverlay = projectModalContainer.querySelector("[data-overlay]");
+
+// Project modal content elements
+const projModalImg = projectModalContainer.querySelector("[data-modal-img]");
+const projModalTitle = projectModalContainer.querySelector("[data-modal-title]");
+const projModalType = projectModalContainer.querySelector("[data-modal-type]");
+const projModalCategory = projectModalContainer.querySelector("[data-modal-category]");
+const projModalRole = projectModalContainer.querySelector("[data-modal-role]");
+const projModalTech = projectModalContainer.querySelector("[data-modal-tech]");
+const projModalDesc = projectModalContainer.querySelector("[data-modal-description]");
+const projModalLive = projectModalContainer.querySelector("[data-modal-live]");
+const projModalGithub = projectModalContainer.querySelector("[data-modal-github]");
+
+// Project modal toggle function
+const projectModalFunc = function () {
+  projectModalContainer.classList.toggle("active");
+  projectOverlay.classList.toggle("active");
+}
 
 // modal toggle function
 const testimonialsModalFunc = function () {
@@ -47,6 +69,56 @@ for (let i = 0; i < testimonialsItem.length; i++) {
 // modalCloseBtn.addEventListener("click", testimonialsModalFunc);
 // overlay.addEventListener("click", testimonialsModalFunc);
 
+// Project Modal Open Logic
+document.addEventListener("click", function(e) {
+  const eyeBtn = e.target.closest("[data-project-eye]");
+  if (eyeBtn) {
+    const projectItem = eyeBtn.closest("[data-project-index]");
+    const index = projectItem.dataset.projectIndex;
+    const project = window.portfolioProjects[index];
+
+    if (project) {
+      projModalImg.src = project.image;
+      projModalImg.alt = project.title;
+      projModalTitle.textContent = project.title;
+      projModalType.textContent = project.type;
+      projModalCategory.textContent = project.projectCategory;
+      projModalRole.textContent = project.role;
+      projModalDesc.textContent = project.description;
+
+      // Populate Tech Stack
+      projModalTech.innerHTML = "";
+      project.techStack.forEach(tech => {
+        const span = document.createElement("span");
+        span.className = "tech-badge";
+        span.textContent = tech;
+        projModalTech.appendChild(span);
+      });
+
+      // Populate Links
+      if (project.liveLink && project.liveLink !== "#") {
+        projModalLive.href = project.liveLink;
+        projModalLive.style.display = "flex";
+      } else {
+        projModalLive.style.display = "none";
+      }
+
+      if (project.githubLink && project.githubLink !== "#") {
+        projModalGithub.href = project.githubLink;
+        projModalGithub.style.display = "flex";
+      } else {
+        projModalGithub.style.display = "none";
+      }
+
+      projectModalFunc();
+    }
+  }
+});
+
+// Project Modal Close Logic
+projectModalCloseBtn.addEventListener("click", projectModalFunc);
+projectOverlay.addEventListener("click", projectModalFunc);
+
 // custom select variables
 const select = document.querySelector("[data-select]");
 const selectItems = document.querySelectorAll("[data-select-item]");
@@ -70,10 +142,11 @@ for (let i = 0; i < selectItems.length; i++) {
 // filter variables
 const filterItems = document.querySelectorAll("[data-filter-item]");
 
+// filter function
 const filterFunc = function (selectedValue) {
+  const filterItems = document.querySelectorAll("[data-filter-item]");
 
   for (let i = 0; i < filterItems.length; i++) {
-
     if (selectedValue === "all") {
       filterItems[i].classList.add("active");
     } else if (selectedValue === filterItems[i].dataset.category) {
@@ -81,9 +154,7 @@ const filterFunc = function (selectedValue) {
     } else {
       filterItems[i].classList.remove("active");
     }
-
   }
-
 }
 
 // add event in all filter button items for large screen
