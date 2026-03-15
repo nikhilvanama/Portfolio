@@ -6,7 +6,9 @@ A modern, responsive, and visually stunning professional portfolio website hoste
 
 ## 🚀 Key Features & Customizations
 
-- **Dynamic Data Architecture:** The core content of the site (Services, Skills, Timelines, Certifications, etc.) is entirely decoupled from the HTML structure. Data is managed securely in `assets/js/data.js` and rendered dynamically using HTML5 `<template>` cloning, making content updates effortless.
+- **Dynamic Data Architecture:** The core content of the site (Services, Skills, Timelines, Certifications, Projects, etc.) is entirely decoupled from the HTML structure. Data is managed securely in `assets/js/data.js` and rendered dynamically using HTML5 `<template>` cloning, making content updates effortless.
+- **Filterable Project Gallery:** A premium, filterable grid for projects (Web design, Websites, Applications, SAP) with a dedicated details modal. The modal features an image carousel (2.5 row layout), technology badges, and direct links to GitHub/Live demos.
+- **Session-based Navigation:** Uses `sessionStorage` to intelligently persist the active page during browser refreshes while ensuring a fresh start ("About" page) on new sessions or tab reopens.
 - **Interactive 3D Philosophy Globe:** A custom CSS/JS implementation featuring a mouse-tracking, 3D tilting globe effect in the Philosophy wrapper.
 - **Serverless AJAX Contact Form:** Fully functional contact form integrated with Formspree via the `fetch` API. It validates inputs manually (min-length, exact 10-digit boundaries for phone numbers) and processes submissions without page reloads.
 - **Custom Toast Notifications:** Responsive, animated Toast UI system (dropping down from the top with glowing violet drop-shadows) to reflect success or validation errors upon form interaction.
@@ -31,10 +33,15 @@ The portfolio is built with a custom-designed single-page architecture that prio
 
 ### 🏗️ Data-Driven UI (The Template Engine)
 Instead of hardcoding a massive `index.html` file, most repetitive structures utilize the `<template>` specification:
-1. All unique content (job titles, descriptions, skills arrays, etc.) is strictly isolated in `assets/js/data.js`.
+1. All unique content (job titles, descriptions, project metadata, skills arrays, etc.) is strictly isolated in `assets/js/data.js`.
 2. `script.js` clones semantic HTML snippets locally for each section.
-3. Need to add a new project or update a certification? **You never need to touch the HTML.** Just add an object to the array in `data.js` and reload. 
+3. **Projects Refactor:** Project items use a specialized template with an "eye" icon and a mobile-optimized "Project Details" link. The project details modal dynamically populates its carousel and action buttons based on the `projectsData` model.
 
+### 🧭 Navigation & Session Persistence
+The single-page routing logic is enhanced with `sessionStorage`:
+- **State Persistence:** When a user navigates, the active page ID is saved to `sessionStorage`.
+- **Intelligent Load:** On page refresh, the script checks for a saved state to restore the user's position.
+- **New Session Reset:** Since `sessionStorage` is unique to the browser tab, opening the site in a new tab always resets the navigation to the initial "About" page.
 ### 📡 Contact Form System
 Built carefully to prevent spam or accidental missends:
 - Form button states visually lockdown upon submission. 
@@ -100,6 +107,11 @@ Comprehensive technical expertise breakdown constructed by nested loops sorting 
 Clean timelines capturing historical Professional Experience, Education, and custom "Bento-Box" Internships referencing external Document PDFs.
 
 ![Journies Section](./assets/images/screenshots/journies_section.png)
+
+### 🎨 Projects
+Filterable project portfolio with dynamic category switching. Detailed modals include high-res image carousels and direct repository links.
+
+![Projects Section](./assets/images/screenshots/projects_section.png)
 
 ### 📧 Contact (AJAX & Toasts)
 Robust verification input fields communicating instantly with isolated REST endpoints via JS interceptors.
