@@ -365,7 +365,8 @@ const navigateTo = function (targetPage) {
     if (targetPage === pages[i].dataset.page) {
       pages[i].classList.add("active");
       navigationLinks[i].classList.add("active");
-      localStorage.setItem("activePage", targetPage);
+      // Save active page to sessionStorage (persists across refresh, but not new session)
+      sessionStorage.setItem("activePage", targetPage);
       window.scrollTo(0, 0);
     } else {
       pages[i].classList.remove("active");
@@ -377,12 +378,12 @@ const navigateTo = function (targetPage) {
 // add event to all nav link
 for (let i = 0; i < navigationLinks.length; i++) {
   navigationLinks[i].addEventListener("click", function () {
-    navigateTo(this.innerHTML.toLowerCase());
+    navigateTo(this.innerHTML.toLowerCase().trim());
   });
 }
 
-// initialization: check localStorage for saved page
-const savedPage = localStorage.getItem("activePage");
+// initialization: check sessionStorage for saved page (refresh case)
+const savedPage = sessionStorage.getItem("activePage");
 if (savedPage) {
   navigateTo(savedPage);
 }
