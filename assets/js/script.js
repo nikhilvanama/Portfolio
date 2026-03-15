@@ -107,7 +107,6 @@ for (let i = 0; i < filterBtn.length; i++) {
 
 // contact form variables
 const form = document.querySelector("[data-form]");
-const formInputs = document.querySelectorAll("[data-form-input]");
 const formBtn = document.querySelector("[data-form-btn]");
 
 // toast variables
@@ -156,10 +155,10 @@ if (form) {
   form.addEventListener("submit", async function (e) {
     e.preventDefault(); // Prevent default page redirect
     
-    // Change button text and disable to prevent double submission
+    // Change button text to indicate sending
     const originalBtnText = formBtn.innerHTML;
     formBtn.innerHTML = "<ion-icon name='hourglass-outline'></ion-icon><span>Sending...</span>";
-    formBtn.setAttribute("disabled", "");
+    formBtn.style.pointerEvents = "none"; // Disable clicking without changing visual disabled state
 
     const formData = new FormData(form);
     
@@ -176,34 +175,23 @@ if (form) {
         showToast(true);
         form.reset(); // Clear the form on success
       } else {
+        // Handle Formspree specific JSON error messages if any
+        const data = await response.json();
+        if (data && data.errors) {
+            toastMessage.innerText = data.errors.map(error => error.message).join(", ");
+        } else {
+            toastMessage.innerText = "Oops! Something went wrong.";
+        }
         showToast(false);
       }
     } catch (error) {
+      toastMessage.innerText = "Network error. Please try again.";
       showToast(false);
     } finally {
-      // Restore button text
+      // Restore button text and pointer events
       formBtn.innerHTML = originalBtnText;
-      // Disable again since the form was likely reset
-      if (!form.checkValidity()) {
-         formBtn.setAttribute("disabled", "");
-      } else {
-         formBtn.removeAttribute("disabled");
-      }
+      formBtn.style.pointerEvents = "auto";
     }
-  });
-}
-
-// add event to all form input field
-for (let i = 0; i < formInputs.length; i++) {
-  formInputs[i].addEventListener("input", function () {
-
-    // check form validation
-    if (form.checkValidity()) {
-      formBtn.removeAttribute("disabled");
-    } else {
-      formBtn.setAttribute("disabled", "");
-    }
-
   });
 }
 
