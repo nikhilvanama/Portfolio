@@ -148,25 +148,25 @@ document.addEventListener("click", function (e) {
       setTimeout(updateCarouselArrows, 100);
 
       // Populate Links
-      if (project.liveLink && project.liveLink !== "#") {
+      if (project.liveLink && project.liveLink.trim() !== "" && project.liveLink !== "#") {
         projModalLive.href = project.liveLink;
-        projModalLive.parentNode.style.display = "flex";
+        projModalLive.style.display = "flex";
       } else {
-        projModalLive.parentNode.style.display = "none";
+        projModalLive.style.display = "none";
       }
 
-      if (project.githubLink && project.githubLink !== "#") {
+      if (project.githubLink && project.githubLink.trim() !== "" && project.githubLink !== "#") {
         projModalGithub.href = project.githubLink;
-        projModalGithub.parentNode.style.display = "flex";
+        projModalGithub.style.display = "flex";
       } else {
-        projModalGithub.parentNode.style.display = "none";
+        projModalGithub.style.display = "none";
       }
 
-      if (project.figmaLink && project.figmaLink !== "#") {
+      if (project.figmaLink && project.figmaLink.trim() !== "" && project.figmaLink !== "#") {
         projModalFigma.href = project.figmaLink;
-        projModalFigma.parentNode.style.display = "flex";
+        projModalFigma.style.display = "flex";
       } else {
-        projModalFigma.parentNode.style.display = "none";
+        projModalFigma.style.display = "none";
       }
 
       projectModalFunc();

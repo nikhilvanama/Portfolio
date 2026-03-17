@@ -1528,6 +1528,7 @@ main {
   display: flex;
   gap: 12px;
   flex-shrink: 0;
+  padding-right: 30px  ;
 }
 
 .modal-actions-top .action-btn {
