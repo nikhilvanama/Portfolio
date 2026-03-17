@@ -36,6 +36,7 @@ const projModalTech = projectModalContainer.querySelector("[data-modal-tech]");
 const projModalDesc = projectModalContainer.querySelector("[data-modal-description]");
 const projModalLive = projectModalContainer.querySelector("[data-modal-live]");
 const projModalGithub = projectModalContainer.querySelector("[data-modal-github]");
+const projModalFigma = projectModalContainer.querySelector("[data-modal-figma]");
 const projModalPrevBtn = projectModalContainer.querySelector("[data-carousel-prev]");
 const projModalNextBtn = projectModalContainer.querySelector("[data-carousel-next]");
 
@@ -75,10 +76,10 @@ for (let i = 0; i < testimonialsItem.length; i++) {
 // Carousel Navigation Logic and State Management
 const updateCarouselArrows = function () {
   if (!projModalCarousel || !projModalPrevBtn || !projModalNextBtn) return;
-  
+
   const scrollLeft = projModalCarousel.scrollLeft;
   const maxScroll = projModalCarousel.scrollWidth - projModalCarousel.clientWidth;
-  
+
   // Use a small threshold for floating point inaccuracies
   projModalPrevBtn.disabled = scrollLeft <= 1;
   projModalNextBtn.disabled = scrollLeft >= maxScroll - 1;
@@ -88,24 +89,24 @@ if (projModalPrevBtn && projModalNextBtn && projModalCarousel) {
   projModalPrevBtn.addEventListener("click", () => {
     projModalCarousel.scrollBy({ left: -300, behavior: 'smooth' });
   });
-  
+
   projModalNextBtn.addEventListener("click", () => {
     projModalCarousel.scrollBy({ left: 300, behavior: 'smooth' });
   });
 
   projModalCarousel.addEventListener("scroll", updateCarouselArrows);
-  
+
   // Also check on window resize
   window.addEventListener("resize", updateCarouselArrows);
 }
 
 // Project Modal Open Logic
-document.addEventListener("click", function(e) {
+document.addEventListener("click", function (e) {
   const openBtn = e.target.closest("[data-project-eye], [data-project-details]");
   if (openBtn) {
     const projectItem = openBtn.closest("[data-project-index]");
     if (!projectItem) return;
-    
+
     const index = projectItem.dataset.projectIndex;
     const project = window.portfolioProjects[index];
 
@@ -159,6 +160,13 @@ document.addEventListener("click", function(e) {
         projModalGithub.parentNode.style.display = "flex";
       } else {
         projModalGithub.parentNode.style.display = "none";
+      }
+
+      if (project.figmaLink && project.figmaLink !== "#") {
+        projModalFigma.href = project.figmaLink;
+        projModalFigma.parentNode.style.display = "flex";
+      } else {
+        projModalFigma.parentNode.style.display = "none";
       }
 
       projectModalFunc();
@@ -255,13 +263,13 @@ const showToast = (isSuccess, customMessage = null) => {
   if (!toastNotification) return;
 
   toastTitle.innerText = isSuccess ? "Success!" : "Error!";
-  
+
   if (customMessage) {
     toastMessage.innerText = customMessage;
   } else {
     toastMessage.innerText = isSuccess ? "Your message has been sent successfully." : "Oops! Something went wrong.";
   }
-  
+
   if (isSuccess) {
     toastIcon.name = "checkmark-circle-outline";
     toastIcon.classList.remove("error-icon");
@@ -271,9 +279,9 @@ const showToast = (isSuccess, customMessage = null) => {
     toastIcon.classList.remove("success-icon");
     toastIcon.classList.add("error-icon");
   }
-  
+
   toastNotification.classList.add("active");
-  
+
   // Auto close after 5 seconds
   setTimeout(hideToast, 5000);
 };
@@ -282,7 +290,7 @@ const showToast = (isSuccess, customMessage = null) => {
 if (form) {
   form.addEventListener("submit", async function (e) {
     e.preventDefault(); // Prevent default page redirect
-    
+
     // Custom Validations
     const fullname = form.fullname.value.trim();
     if (fullname.length < 4) {
@@ -314,23 +322,23 @@ if (form) {
       showToast(false, "Message must be at least 10 characters long.");
       return;
     }
-    
+
     // Change button text to indicate sending
     const originalBtnText = formBtn.innerHTML;
     formBtn.innerHTML = "<ion-icon name='hourglass-outline'></ion-icon><span>Sending...</span>";
     formBtn.style.pointerEvents = "none"; // Disable clicking without changing visual disabled state
 
     const formData = new FormData(form);
-    
+
     try {
       const response = await fetch(form.action, {
         method: form.method,
         body: formData,
         headers: {
-            'Accept': 'application/json'
+          'Accept': 'application/json'
         }
       });
-      
+
       if (response.ok) {
         showToast(true);
         form.reset(); // Clear the form on success
@@ -338,9 +346,9 @@ if (form) {
         // Handle Formspree specific JSON error messages if any
         const data = await response.json();
         if (data && data.errors) {
-            toastMessage.innerText = data.errors.map(error => error.message).join(", ");
+          toastMessage.innerText = data.errors.map(error => error.message).join(", ");
         } else {
-            toastMessage.innerText = "Oops! Something went wrong.";
+          toastMessage.innerText = "Oops! Something went wrong.";
         }
         showToast(false);
       }

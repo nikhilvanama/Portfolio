@@ -1356,7 +1356,16 @@ main {
   gap: 8px;
 }
 
-.project-item > a { width: 100%; }
+.project-item>a {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.project-item .project-title {
+  margin-top: auto;
+}
 
 .project-img {
   position: relative;
@@ -1379,7 +1388,9 @@ main {
   transition: var(--transition-1);
 }
 
-.project-item > a:hover .project-img::before { background: rgba(0, 0, 0, 0.5); }
+.project-item>a:hover .project-img::before {
+  background: rgba(0, 0, 0, 0.5);
+}
 
 .project-item-icon-box {
   --scale: 0.8;
@@ -1398,24 +1409,31 @@ main {
   cursor: pointer;
 }
 
-.project-item > a:hover .project-item-icon-box {
+.project-item>a:hover .project-item-icon-box {
   --scale: 1;
   opacity: 1;
 }
 
-.project-item-icon-box ion-icon { --ionicon-stroke-width: 50px; }
+.project-item-icon-box ion-icon {
+  --ionicon-stroke-width: 50px;
+}
 
 .project-img img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: left;
   transition: var(--transition-1);
 }
 
-.project-item > a:hover img { transform: scale(1.1); }
+.project-item>a:hover img {
+  transform: scale(1.1);
+}
 
 .project-title,
-.project-category { margin-left: 10px; }
+.project-category {
+  margin-left: 10px;
+}
 
 .project-title {
   color: var(--white-2);
@@ -1427,8 +1445,9 @@ main {
 
 .project-category {
   color: var(--light-gray-70);
-  font-size: var(--fs-6);
+  font-size: 13px;
   font-weight: var(--fw-300);
+  margin-top: 4px;
 }
 
 /*-----------------------------------*\
@@ -1440,7 +1459,8 @@ main {
   justify-content: center;
   align-items: center;
   padding: 20px;
-  z-index: 20; /* Increased to ensure it's on top */
+  z-index: 20;
+  /* Increased to ensure it's on top */
 }
 
 .project-details-modal {
@@ -1500,7 +1520,8 @@ main {
 
 .modal-title {
   color: var(--white-1);
-  flex: 1; /* Allow title to grow and push icons to the right */
+  flex: 1;
+  /* Allow title to grow and push icons to the right */
 }
 
 .modal-actions-top {
@@ -1585,7 +1606,8 @@ main {
   display: flex;
   flex-direction: column;
   gap: 15px;
-  position: relative; /* Container for absolute arrows */
+  position: relative;
+  /* Container for absolute arrows */
 }
 
 .carousel-controls {
@@ -1601,7 +1623,8 @@ main {
   scroll-behavior: smooth;
   padding-bottom: 5px;
   overflow-y: hidden;
-  scrollbar-width: none; /* Hide scrollbar for cleaner look with arrows */
+  scrollbar-width: none;
+  /* Hide scrollbar for cleaner look with arrows */
 }
 
 .modal-carousel::-webkit-scrollbar {
@@ -1609,8 +1632,10 @@ main {
 }
 
 .modal-carousel .carousel-item {
-  min-width: calc(40% - 11.25px); /* Adjusted for 2.5 items with 15px gap */
-  height: 180px; /* Slightly taller */
+  min-width: calc(40% - 11.25px);
+  /* Adjusted for 2.5 items with 15px gap */
+  height: 180px;
+  /* Slightly taller */
   border-radius: 12px;
   overflow: hidden;
   border: 1px solid var(--jet);
@@ -1675,14 +1700,15 @@ main {
     align-items: flex-start;
     gap: 10px;
   }
-  
+
   .modal-meta-grid {
     grid-template-columns: 1fr;
     gap: 10px;
   }
-  
+
   .modal-carousel .carousel-item {
-    min-width: calc(80% - 10px); /* On mobile, show fewer items */
+    min-width: calc(80% - 10px);
+    /* On mobile, show fewer items */
   }
 }
 
@@ -1888,8 +1914,9 @@ main {
 
 .project-category {
   color: var(--light-gray-70);
-  font-size: var(--fs-6);
+  font-size: 13px;
   font-weight: var(--fw-300);
+  margin-top: 4px;
 }
 
 
@@ -2095,12 +2122,10 @@ textarea.form-input::-webkit-resizer {
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(
-    90deg,
-    transparent,
-    rgba(255, 255, 255, 0.4),
-    transparent
-  );
+  background: linear-gradient(90deg,
+      transparent,
+      rgba(255, 255, 255, 0.4),
+      transparent);
   transition: all 0.5s ease;
   animation: shine 3s infinite;
   z-index: -1;
@@ -2158,10 +2183,10 @@ textarea.form-input::-webkit-resizer {
    * #PORTFOLIO, BLOG 
    */
 
-  .project-img,
+  /* .project-img,
   .blog-banner-box {
     height: auto;
-  }
+  } */
 
 }
 
@@ -3040,8 +3065,9 @@ textarea.form-input::-webkit-resizer {
 
 .toast-notification {
   position: fixed;
-  top: -150px; /* Hidden by default at the top */
-  right: 30px; 
+  top: -150px;
+  /* Hidden by default at the top */
+  right: 30px;
   background: var(--eerie-black-1);
   border: 1px solid var(--jet);
   border-radius: 14px;
@@ -3050,7 +3076,8 @@ textarea.form-input::-webkit-resizer {
   align-items: center;
   gap: 20px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-  z-index: 2000; /* Above everything */
+  z-index: 2000;
+  /* Above everything */
   opacity: 0;
   visibility: hidden;
   transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
@@ -3119,7 +3146,7 @@ textarea.form-input::-webkit-resizer {
     padding: 10px 20px;
   }
 
-    .article-title::after {
+  .article-title::after {
     bottom: 5px;
   }
 }

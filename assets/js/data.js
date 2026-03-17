@@ -534,32 +534,34 @@ populateInternshipsTemplate(internshipsData, internshipsList, internshipsTemplat
  */
 const projectsData = [
   {
-    title: "Finance App",
-    category: "web development", // This maps to the filter buttons
-    displayCategory: "Web Development",
-    type: "Financial Dashboard",
+    title: "Expense Tracker Application",
+    category: "applications", // This maps to the filter buttons
+    displayCategory: "Web Application",
+    type: "Web Application",
     projectCategory: "Personal Project",
-    thumbnail: "./assets/images/project-1.jpg",
-    images: ["./assets/images/project-1.jpg", "./assets/images/project-2.png", "./assets/images/project-3.jpg"],
-    techStack: ["HTML5", "CSS3", "JavaScript", "Chart.js"],
-    description: "A comprehensive financial dashboard that allows users to track their spending, visualize budget allocations, and manage multiple accounts in real-time.",
-    role: "Lead Developer",
-    liveLink: "https://vnikhil.vercel.app/",
-    githubLink: "https://github.com/nikhilvanama"
+    thumbnail: "./assets/images/projects/expense-tracker/thumbnail.png",
+    images: ["./assets/images/projects/expense-tracker/image.png", "./assets/images/projects/expense-tracker/image2.png", "./assets/images/projects/expense-tracker/image3.png", "./assets/images/projects/expense-tracker/image4.png"],
+    techStack: ["HTML5", "CSS3", "Tailwind", "TypeScript", "Angular","Firebase Realtime Database"],
+    description: "",
+    role: "Developer",
+    liveLink: "",
+    githubLink: "https://github.com/nikhilvanama/ExpenseTracker-Firebase",
+    figmaLink: ""
   },
   {
-    title: "Orizon UI Kit",
-    category: "web design",
-    displayCategory: "Web Design",
-    type: "UI Kit / Design System",
+    title: "Task Manager",
+    category: "applications",
+    displayCategory: "Web Application",
+    type: "Web Application",
     projectCategory: "Personal Project",
-    thumbnail: "./assets/images/project-2.png",
+    thumbnail: "./assets/images/projects/task-manager/thumbnail.png",
     images: ["./assets/images/project-2.png", "./assets/images/project-4.png", "./assets/images/project-5.png"],
-    techStack: ["Figma", "Design Systems", "UI Principles"],
-    description: "A modern UI Kit designed for SaaS platforms, focusing on accessibility, clean typography, and a consistent modular grid system.",
-    role: "UI Designer",
-    liveLink: "#",
-    githubLink: "#"
+    techStack: ["HTML5", "CSS3", "Tailwind", "TypeScript", "Angular"],
+    description: "",
+    role: "Developer",
+    liveLink: "https://task-manager-zeta-wheat.vercel.app/",
+    githubLink: "https://github.com/nikhilvanama/Task_Manager",
+    figmaLink: ""
   },
   {
     title: "Fundo Wallet",
@@ -573,7 +575,8 @@ const projectsData = [
     description: "A secure and intuitive cryptocurrency wallet design that simplifies the process of sending, receiving, and managing digital assets.",
     role: "UX Researcher & Designer",
     liveLink: "#",
-    githubLink: "#"
+    githubLink: "#",
+    figmaLink: "https://www.figma.com/design/your-design-link-2"
   },
   {
     title: "Brawlhalla Statistics",
@@ -587,7 +590,8 @@ const projectsData = [
     description: "An application that fetches and visualizes player statistics from the Brawlhalla API, providing deep insights into win rates and legend mastery.",
     role: "Fullstack Developer",
     liveLink: "#",
-    githubLink: "#"
+    githubLink: "#",
+    figmaLink: "#"
   },
   {
     title: "DSM Platform",
@@ -601,7 +605,8 @@ const projectsData = [
     description: "An enterprise-level management platform designed to streamline digital service workflows and improve team collaboration across departments.",
     role: "UI/UX Designer",
     liveLink: "#",
-    githubLink: "#"
+    githubLink: "#",
+    figmaLink: "https://www.figma.com/design/your-design-link-3"
   },
   {
     title: "SAP Fiori Dashboard",
@@ -615,7 +620,8 @@ const projectsData = [
     description: "A custom SAP Fiori analytical dashboard designed to provide real-time business insights for supply chain management using SAP BTP.",
     role: "SAP Developer",
     liveLink: "#",
-    githubLink: "#"
+    githubLink: "#",
+    figmaLink: "#"
   }
 ];
 
