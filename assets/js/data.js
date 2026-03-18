@@ -564,19 +564,19 @@ const projectsData = [
     figmaLink: ""
   },
   {
-    title: "Fundo Wallet",
+    title: "Todo Application",
     category: "web design",
     displayCategory: "Web Design",
-    type: "Crypto Wallet Design",
-    projectCategory: "Freelance",
-    thumbnail: "./assets/images/project-3.jpg",
+    type: "Web Application",
+    projectCategory: "Personal Project",
+    thumbnail: "./assets/images/projects/todo-application/thumbnail.png",
     images: ["./assets/images/project-3.jpg", "./assets/images/project-1.jpg"],
-    techStack: ["Figma", "User Research", "Prototyping"],
-    description: "A secure and intuitive cryptocurrency wallet design that simplifies the process of sending, receiving, and managing digital assets.",
-    role: "UX Researcher & Designer",
-    liveLink: "#",
-    githubLink: "#",
-    figmaLink: "https://www.figma.com/design/your-design-link-2"
+    techStack: ["HTML5", "CSS3", "Tailwind", "TypeScript", "Angular"],
+    description: "",
+    role: "Developer",
+    liveLink: "",
+    githubLink: "",
+    figmaLink: ""
   },
   {
     title: "Brawlhalla Statistics",
