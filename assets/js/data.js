@@ -579,10 +579,10 @@ const projectsData = [
     figmaLink: ""
   },
   {
-    title: "Brawlhalla Statistics",
+    title: "Event Management System",
     category: "applications",
     displayCategory: "Applications",
-    type: "Data Visualizer",
+    type: "Web Application",
     projectCategory: "Personal Project",
     thumbnail: "./assets/images/project-4.png",
     images: ["./assets/images/project-4.png", "./assets/images/project-3.jpg"],
