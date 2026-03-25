@@ -542,7 +542,7 @@ const projectsData = [
     thumbnail: "./assets/images/projects/expense-tracker/thumbnail.png",
     images: ["./assets/images/projects/expense-tracker/image.png", "./assets/images/projects/expense-tracker/image2.png", "./assets/images/projects/expense-tracker/image3.png", "./assets/images/projects/expense-tracker/image4.png"],
     techStack: ["HTML5", "CSS3", "Tailwind", "TypeScript", "Angular","Firebase Realtime Database"],
-    description: "",
+    description: "The Modern Expense Tracker is a premium, real-time financial management application built with Angular and Firebase Realtime Database. Designed with a strong focus on modern web aesthetics, the application features a stunning Glassmorphism UI layered over a deep navy dark theme, providing a sleek and highly engaging user experience.<br>It leverages Firebase's real-time synchronization capabilities to instantly reflect data changes across all sessions without requiring manual refreshes. The application maintains a clean, modular architecture utilizing Angular services for centralized database interactions and Reactive Forms for robust user input validation.<br>Key features include automated latest-first chronological sorting, native currency localization, and a seamless custom modal system for integrated delete confirmations. By combining the power of Angular's component-based structure with premium typography and subtle CSS-driven micro-interactions, this project demonstrates my ability to build responsive, full-stack applications that prioritize both robust technical architecture and an exceptional frontend design.",
     role: "Developer",
     liveLink: "",
     githubLink: "https://github.com/nikhilvanama/ExpenseTracker-Firebase",

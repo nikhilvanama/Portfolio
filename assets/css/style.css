@@ -1691,8 +1691,9 @@ main {
 
 .modal-description p {
   color: var(--light-gray);
-  font-size: 14px;
-  line-height: 1.6;
+  font-size: 13px;
+  line-height: 1.8;
+  margin-top: 10px;
 }
 
 @media (max-width: 580px) {

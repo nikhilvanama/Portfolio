@@ -115,7 +115,7 @@ document.addEventListener("click", function (e) {
       projModalType.textContent = project.type;
       projModalCategory.textContent = project.projectCategory;
       projModalRole.textContent = project.role;
-      projModalDesc.textContent = project.description;
+      projModalDesc.innerHTML = project.description;
 
       // Populate Tech Stack
       projModalTech.innerHTML = "";
