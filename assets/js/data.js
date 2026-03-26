@@ -175,7 +175,7 @@ if (habitsListContainer && habitTemplate && typeof habitsData !== 'undefined') {
  * Content for the "Achievements" section.
  */
 const achievementsData = [
-  { icon: "globe-outline", number: "15+", text: "Websites Delivered" },
+  { icon: "globe-outline", number: "25+", text: "Websites Delivered" },
   { icon: "business-outline", number: "8+", text: "Industries Worked Projects" },
   { icon: "sparkles-outline", number: "2.5+", text: "Years of Experience" }
 ];

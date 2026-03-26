@@ -896,9 +896,10 @@ main {
 
 .philosophy-text {
   color: var(--light-gray);
-  font-size: var(--fs-6);
+  font-size: 14px;
   font-weight: var(--fw-300);
   line-height: 1.6;
+  max-width: 50%;
 }
 
 .philosophy-text h4 {
@@ -910,12 +911,11 @@ main {
 }
 
 .philosophy-image-container {
-  width: 100%;
-  max-width: 450px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  perspective: 1000px;
+    width: 100%;
+    height: 450px;
+    position: absolute;
+    right: -10px;
+    /* top: 0; */
 }
 
 .philosophy-image-interactive {
