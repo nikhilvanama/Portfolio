@@ -400,7 +400,7 @@ const experienceData = [
     link: "https://www.mediacle.com/",
     years: "22nd Sept 2025 — Present",
     location: "Bangalore, Karnataka",
-    text: "Nemo enim ipsam voluptatem blanditiis praesentium voluptum delenit atque corrupti, quos dolores et qvuas molestias exceptur."
+    text: "Developing and maintaining websites using WordPress, with exposure to React, Node.js, and PostgreSQL-based systems. Focused on delivering scalable client solutions while strengthening backend integration and system-level understanding."
   },
   {
     title: "Associate Software Engineer",
@@ -408,7 +408,7 @@ const experienceData = [
     link: "https://www.seldomtechnologies.com/",
     years: "Dec 2023 — 19th Sept 2025",
     location: "Mangalagiri, Andhra Pradesh",
-    text: "Nemo enims ipsam voluptatem, blanditiis praesentium voluptum delenit atque corrupti, quos dolores et quas molestias exceptur."
+    text: "Worked on responsive web applications using HTML, CSS, JavaScript, and WordPress, along with UI design using Figma. Contributed to client projects, documentation, and supported SAP Fiori frontend tasks, gaining exposure to enterprise application workflows."
   }
 ];
 
