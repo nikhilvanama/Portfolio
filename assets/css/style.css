@@ -981,15 +981,15 @@ main {
 .freelance-wrapper {
   background: var(--border-gradient-onyx);
   padding: 30px;
-  border-radius: 14px;
-  border: 1px solid var(--violet-crayola);
-  box-shadow: 0 0 15px rgba(138, 43, 226, 0.15);
+  border-radius: 16px;
+  border: 1px solid var(--jet);
+  box-shadow: none;
   position: relative;
   z-index: 1;
   display: grid;
   grid-template-columns: 1fr;
-  gap: 30px;
-  transition: var(--transition-1);
+  gap: 25px;
+  transition: all 0.4s ease;
 }
 
 .freelance-wrapper::before {
@@ -1002,23 +1002,48 @@ main {
 }
 
 .freelance-wrapper:hover {
-  box-shadow: 0 0 20px rgba(138, 43, 226, 0.4);
+  border-color: var(--violet-crayola);
+  box-shadow: 0 0 25px rgba(138, 43, 226, 0.2);
+  transform: translateY(-2px);
 }
 
 .freelance-block {
   display: flex;
   flex-direction: column;
+  padding: 25px;
+  background: rgba(40, 40, 45, 0.4);
+  border-radius: 12px;
+  border: 1px solid transparent;
+  transition: var(--transition-1);
+}
+
+.freelance-block:hover {
+  background: rgba(50, 50, 55, 0.6);
+  border: 1px solid var(--jet);
+}
+
+.highlight-title-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 15px;
+}
+
+.highlight-icon {
+  font-size: 24px;
+  color: var(--violet-crayola);
 }
 
 .highlight-title {
-  margin-bottom: 12px;
+  margin-bottom: 0;
   color: var(--white-1);
 }
 
 @media (min-width: 768px) {
   .freelance-wrapper {
     grid-template-columns: 1fr 1fr;
-    gap: 40px;
+    gap: 30px;
+    padding: 40px;
   }
 }
 
