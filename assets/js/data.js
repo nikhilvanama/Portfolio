@@ -247,7 +247,7 @@ if (philosophyTextContainer && philosophyTemplate && typeof philosophyData !== '
 const skillsData = [
   {
     category: "Web Development",
-    skills: ["HTML5", "CSS3", "Bootstrap", "Tailwind CSS", "JavaScript (ES6+)", "TypeScript (basic)", "React.js", "Angular (v18+)", "REST APIs", "Responsive Web Design", "Web Animations (GSAP)", "DOM Manipulation", "Cross-browser Compatibility"]
+    skills: ["HTML5", "CSS3", "Bootstrap", "Tailwind CSS", "JavaScript (ES6+)",  "U15", "TypeScript (basic)", "React.js", "Angular (v18+)", "REST APIs", "Responsive Web Design", "Web Animations (GSAP)", "DOM Manipulation", "Cross-browser Compatibility"]
   },
   {
     category: "Programming & Scripting",
@@ -271,7 +271,7 @@ const skillsData = [
   },
   {
     category: "Development Tools",
-    skills: ["Git", "GitHub", "GitHub Copilot", "VS Code", "Google Antigravity", "Cursor", "Claude", "Chrome DevTools", "Postman", "Jira", "Docker", "Excel"]
+    skills: ["Git", "GitHub", "GitHub Copilot", "VS Code", "Google Antigravity", "Cursor", "Claude", "ChatGPT", "Gemini", "Chrome DevTools", "Postman", "Jira", "Docker", "Excel"]
   }
 ];
 
