@@ -2,7 +2,7 @@
 
 [![Live Site](https://img.shields.io/badge/Live-vnikhil.vercel.app-7b2cbf?style=for-the-badge&logo=vercel)](https://vnikhil.vercel.app/)
 
-A modern, responsive, and visually stunning professional portfolio website hosted on Vercel. This project showcases my journey, skills, projects, and professional experience with a focus on enterprise-level aesthetics, seamless animations, and a dynamic, data-driven architecture.
+A modern, responsive, and visually stunning professional portfolio website hosted on Vercel. This project showcases my journey, skills, projects, and professional experience with a focus on enterprise-level aesthetics, seamless animations, and a dynamic, data-driven architecture....
 
 ## 🚀 Key Features & Customizations
 
